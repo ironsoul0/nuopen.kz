@@ -1,17 +1,12 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
 import PropTypes from "prop-types";
+
+import Global from "../styles/Global";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <h1>Kekocity</h1>
+      <Global />
       {children}
     </>
   );
