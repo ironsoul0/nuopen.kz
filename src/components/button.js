@@ -20,5 +20,15 @@ export default Button;
 const MyLink = styled(Link)`
   color: ${theme.colors.black};
   background-color: ${theme.colors.white};
+  font-size: ${theme.fontSizes.xs};
+  padding: 15px 30px;
+  border-bottom-left-radius: 25px;
+  border-top-right-radius: 25px;
+
+  &:hover {
+    background-color: ${theme.colors.darkenedWhite};
+  }
+
+  ${mixins.transition};
   ${mixins.dropDecoration};
 `;

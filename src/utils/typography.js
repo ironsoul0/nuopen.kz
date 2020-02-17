@@ -5,6 +5,12 @@ const fonts = ["Montserrat", "-apple-system", "Helvetica", "Arial", "sans-serif"
 const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.666,
+  googleFonts: [
+    {
+      name: "Montserrat",
+      styles: ["400", "700"],
+    },
+  ],
   headerFontFamily: fonts,
   bodyFontFamily: fonts,
 });
