@@ -22,6 +22,10 @@ const IndexPage = ({ data }) => (
         <Description>First ever open ACM competition</Description>
         <Description>held in the walls of</Description>
         <Description>Nazarbayev University.</Description>
+        <ButtonsRow>
+          <Button href="#">Party Hard</Button>
+          <Button href="#">Schedule</Button>
+        </ButtonsRow>
       </Info>
     </Main>
   </Layout>
@@ -69,7 +73,7 @@ const Heading = styled.h1`
   &:first-of-type::before {
     content: "";
     width: 85px;
-    height: 10px;
+    height: 8px;
     margin-bottom: 40px;
     margin-left: 3px;
     background-color: ${theme.colors.white};
@@ -87,4 +91,31 @@ const Description = styled.p`
   font-weight: 300;
   margin: 0;
   line-height: 25px;
+`;
+
+const ButtonsRow = styled.div`
+  margin-top: 40px;
+  ${mixins.rowFlex};
+`;
+
+const Button = styled.a`
+  font-size: 21px;
+  font-weight: 600;
+  padding: 15px 0px;
+  width: 175px;
+  text-align: center;
+  border-radius: 5px;
+
+  &:first-of-type {
+    background-color: ${theme.colors.red};
+    margin-right: 35px;
+  }
+
+  &:nth-last-of-type(1) {
+    background-color: ${theme.colors.darkBlue};
+  }
+
+  color: ${theme.colors.white};
+
+  ${mixins.dropDecoration};
 `;

@@ -6,14 +6,14 @@ const theme = {
     white: "#FFFFFF",
     darkenedWhite: "#EFEAEA",
     red: "#E86D70",
-    darkBlue: "#E86D70",
+    darkBlue: "#424555",
     lightGrey: "#C4C4C9",
     mediumGrey: "#BEBFC4",
     darkGrey: "#D7D7DA",
   },
   fontSizes: {
     xs: "16px",
-    sm: "20px",
+    sm: "19px",
     xl: "67px",
   },
 };

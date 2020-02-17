@@ -6,16 +6,16 @@ import { Link } from "gatsby";
 import theme from "../styles/theme";
 import mixins from "../styles/mixins";
 
-const Button = ({ to, children }) => {
+const NavButton = ({ to, children }) => {
   return <MyLink to={to}>{children}</MyLink>;
 };
 
-Button.propTypes = {
+NavButton.propTypes = {
   to: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 
-export default Button;
+export default NavButton;
 
 const MyLink = styled(Link)`
   color: ${theme.colors.black};
