@@ -21,7 +21,9 @@ const MyLink = styled(Link)`
   color: ${theme.colors.black};
   background-color: ${theme.colors.white};
   font-size: ${theme.fontSizes.xs};
-  padding: 15px 30px;
+  padding: 13px 0px;
+  width: 135px;
+  text-align: center;
   border-bottom-left-radius: 25px;
   border-top-right-radius: 25px;
 
