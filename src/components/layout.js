@@ -1,14 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 import Global from "../styles/Global";
+import theme from "../styles/theme";
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <Root>
       <Global />
       {children}
-    </>
+    </Root>
   );
 };
 
@@ -17,3 +19,9 @@ Layout.propTypes = {
 };
 
 export default Layout;
+
+const Root = styled.div`
+  min-height: 100vh;
+  max-width: ${theme.maxWidth};
+  margin: 0 auto;
+`;
