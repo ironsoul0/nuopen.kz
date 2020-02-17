@@ -5,6 +5,7 @@ import { Link } from "gatsby";
 
 import theme from "../styles/theme";
 import mixins from "../styles/mixins";
+import media from "../styles/media";
 
 const NavButton = ({ to, children }) => {
   return <MyLink to={to}>{children}</MyLink>;
@@ -30,6 +31,12 @@ const MyLink = styled(Link)`
   &:hover {
     background-color: ${theme.colors.darkenedWhite};
   }
+
+  ${media.phablet`
+    padding: 11px 0px;
+    font-size: 14px;
+    width: 115px;
+  `};
 
   ${mixins.transition};
   ${mixins.dropDecoration};

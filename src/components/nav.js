@@ -13,7 +13,7 @@ const Nav = ({ to, destination }) => {
   return (
     <Container>
       <LogoLink to="/">
-        <Logo />
+        <MyLogo />
       </LogoLink>
       <Bar>
         <Contact href="mailto:organizers@nuopen.kz">Sponsor Us</Contact>
@@ -69,4 +69,10 @@ const Contact = styled.a`
 
 const LogoLink = styled(Link)`
   margin-top: 15px;
+`;
+
+const MyLogo = styled(Logo)`
+  ${media.phablet`
+    width: 90px;
+  `};
 `;
