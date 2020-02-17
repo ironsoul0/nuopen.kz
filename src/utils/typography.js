@@ -14,4 +14,6 @@ const typography = new Typography({
   bodyFontFamily: ["Montserrat", "Georgia", "serif"],
 });
 
+typography.injectStyles();
+
 export default typography;
