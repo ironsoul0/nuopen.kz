@@ -107,11 +107,13 @@ const Image = styled(Img)`
   `};
 `;
 
-const Info = styled.div``;
+const Info = styled.div`
+  margin-top: -60px;
+`;
 
 const Heading = styled.h1`
   font-size: 2.68em;
-  line-height: 50px;
+  line-height: 40px;
 
   ${media.phablet`
     font-size: 2.2em;
@@ -133,7 +135,7 @@ const Heading = styled.h1`
 
     ${media.phablet`
       height: 8px;
-      width: 75px;
+      width: 65px;
     `};
   }
 
@@ -158,7 +160,7 @@ const ButtonsRow = styled.div`
 const Button = styled.a`
   font-size: 0.84em;
   font-weight: 600;
-  padding: 15px 0px;
+  padding: 20px 0px;
   width: 175px;
   text-align: center;
   border-radius: 5px;
@@ -176,9 +178,9 @@ const Button = styled.a`
     background-color: ${theme.colors.red};
     margin-right: 35px;
 
-    ${media.phablet} {
+    ${media.phablet`
       margin-right: 15px;
-    }
+    `};
 
     ${media.phone`
       margin-right: 10px;

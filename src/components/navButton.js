@@ -22,7 +22,7 @@ const MyLink = styled(Link)`
   color: ${theme.colors.black};
   background-color: ${theme.colors.white};
   font-size: ${theme.fontSizes.xs};
-  padding: 13px 0px;
+  padding: 17px 0px;
   width: 135px;
   text-align: center;
   border-bottom-left-radius: 25px;
@@ -33,7 +33,7 @@ const MyLink = styled(Link)`
   }
 
   ${media.phablet`
-    padding: 11px 0px;
+    padding: 14px 0px;
     font-size: 14px;
     width: 115px;
   `};
