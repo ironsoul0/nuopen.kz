@@ -122,6 +122,7 @@ const Heading = styled.h1`
 
   ${media.phone`
     font-size: 2em;
+    line-height: 25px;
   `};
 
   &:first-of-type::before {
