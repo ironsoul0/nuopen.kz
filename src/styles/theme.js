@@ -6,6 +6,7 @@ const theme = {
     white: "#FFFFFF",
     darkenedWhite: "#EFEAEA",
     red: "#E86D70",
+    brightRed: "#FAE7E8",
     hoveredRed: "#D76366",
     darkBlue: "#424555",
     hoveredBlue: "#414353",

@@ -44,7 +44,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "hacker.png" }) {
+    placeholderImage: file(relativePath: { eq: "hacker.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -108,7 +108,7 @@ const Image = styled(Img)`
 `;
 
 const Info = styled.div`
-  margin-top: -60px;
+  margin-top: -70px;
 `;
 
 const Heading = styled.h1`
@@ -201,7 +201,7 @@ const Button = styled.a`
     }
   }
 
-  color: ${theme.colors.white};
+  color: ${theme.colors.brightRed};
 
   ${mixins.dropDecoration};
 `;
