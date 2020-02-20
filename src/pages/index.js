@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import styled from "styled-components";
 
+import Sponsors from "../components/sponsors";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Nav from "../components/nav";
@@ -30,7 +31,7 @@ const IndexPage = ({ data }) => (
           </ButtonsRow>
         </Info>
       </Main>
-      <p style={{ textAlign: "center", marginTop: "15px" }}>sponsors</p>
+      <Sponsors />
     </Wrapper>
   </Layout>
 );
