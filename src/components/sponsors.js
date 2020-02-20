@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 
+import Sponsor from "./sponsor";
 import mixins from "../styles/mixins";
 import { sizes } from "../styles/media";
 
@@ -42,12 +42,17 @@ const Sponsors = () => {
 
   return (
     <Container>
-      <SponsorImage fluid={data.kazdream.childImageSharp.fluid} width="100" />
-      <SponsorImage fluid={data.bts.childImageSharp.fluid} width="114" />
-      <SponsorImage fluid={data.acm.childImageSharp.fluid} width="82" />
-      <SponsorImage
+      <Sponsor
+        fluid={data.kazdream.childImageSharp.fluid}
+        width={100}
+        link="https://kazdream.kz/"
+      />
+      <Sponsor fluid={data.bts.childImageSharp.fluid} width={114} link="https://btsdigital.kz/" />
+      <Sponsor fluid={data.acm.childImageSharp.fluid} width={82} link="https://acmkz.github.io/" />
+      <Sponsor
         fluid={data.okoo.childImageSharp.fluid}
-        width="75"
+        width={75}
+        link="https://okoo.kz/"
         style={{ marginBottom: "8px" }}
       />
     </Container>
@@ -64,8 +69,4 @@ const Container = styled.div`
   max-width: ${sizes.tablet}px;
 
   ${mixins.rowFlex};
-`;
-
-const SponsorImage = styled(Img)`
-  width: ${props => props.width}px;
 `;

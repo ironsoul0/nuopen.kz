@@ -54,6 +54,7 @@ const Bar = styled.div`
 const Contact = styled.a`
   color: ${theme.colors.white};
   margin-right: 55px;
+  font-weight: 300;
 
   ${mixins.dropDecoration};
   ${mixins.transition};

@@ -27,6 +27,7 @@ const MyLink = styled(Link)`
   text-align: center;
   border-bottom-left-radius: 25px;
   border-top-right-radius: 25px;
+  font-weight: 300;
 
   &:hover {
     background-color: ${theme.colors.darkenedWhite};
