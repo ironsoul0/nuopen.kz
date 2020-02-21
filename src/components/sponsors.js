@@ -42,18 +42,23 @@ const Sponsors = () => {
 
   return (
     <Container>
+      <Sponsor fluid={data.bts.childImageSharp.fluid} width={114} link="https://btsdigital.kz/" />
       <Sponsor
         fluid={data.kazdream.childImageSharp.fluid}
         width={100}
         link="https://kazdream.kz/"
       />
-      <Sponsor fluid={data.bts.childImageSharp.fluid} width={114} link="https://btsdigital.kz/" />
-      <Sponsor fluid={data.acm.childImageSharp.fluid} width={82} link="https://acmkz.github.io/" />
       <Sponsor
         fluid={data.okoo.childImageSharp.fluid}
         width={75}
         link="https://okoo.kz/"
-        style={{ marginBottom: "8px" }}
+        style={{ marginBottom: "12px" }}
+      />
+      <Sponsor
+        style={{ marginBottom: "3px" }}
+        fluid={data.acm.childImageSharp.fluid}
+        width={82}
+        link="https://acmkz.github.io/"
       />
     </Container>
   );
