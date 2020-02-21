@@ -13,6 +13,7 @@ const theme = {
     lightGrey: "#C4C4C9",
     mediumGrey: "#BEBFC4",
     darkGrey: "#D7D7DA",
+    thinGrey: "#A8B2D1",
   },
   fontSizes: {
     xs: "16px",

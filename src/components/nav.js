@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
 import Logo from "../icons/logo";
@@ -10,13 +10,23 @@ import theme from "../styles/theme";
 import media from "../styles/media";
 
 const Nav = ({ to, destination }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          email
+        }
+      }
+    }
+  `);
+
   return (
     <Container>
       <LogoLink to="/">
         <MyLogo />
       </LogoLink>
       <Bar>
-        <Contact href="mailto:organizers@nuopen.kz">Sponsor Us</Contact>
+        <Contact href={`mailto:${data.site.siteMetadata.email}`}>Sponsor Us</Contact>
         <NavButton to={to}>{destination}</NavButton>
       </Bar>
     </Container>

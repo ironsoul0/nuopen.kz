@@ -8,7 +8,7 @@ const typography = new Typography({
   googleFonts: [
     {
       name: "Montserrat",
-      styles: ["300", "400", "600", "700"],
+      styles: ["200", "300", "400", "600", "700"],
     },
   ],
   headerFontFamily: fonts,

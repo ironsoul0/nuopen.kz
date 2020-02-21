@@ -38,6 +38,7 @@ const IndexPage = ({ data }) => (
       </Main>
       <Sponsors />
     </Wrapper>
+    <p style={{ height: "200px" }}>kekke</p>
   </Layout>
 );
 

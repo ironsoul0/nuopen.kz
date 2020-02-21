@@ -3,6 +3,7 @@ module.exports = {
     title: `NU Open - Spring 2020`,
     description: `First ever ACM competition held in the walls of Nazarbayev University.`,
     author: `@ironsoul`,
+    email: `organizers@nuopen.kz`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
