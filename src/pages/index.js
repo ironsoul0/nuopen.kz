@@ -21,13 +21,18 @@ const IndexPage = ({ data }) => (
         <Image fluid={data.placeholderImage.childImageSharp.fluid} />
         <Info>
           <Heading>NU Open</Heading>
-          <Heading>Spring 2020.</Heading>
-          <Description>First ever open ACM competition</Description>
-          <Description>held in the walls of</Description>
-          <Description>Nazarbayev University.</Description>
+          <Heading lowOpacity>Spring 2020.</Heading>
+          <Description>First ever open ICPC-style competition</Description>
+          <Description style={{ marginBottom: "20px" }}>
+            held in the walls of Nazarbayev University.
+          </Description>
+          <Description>11 April.</Description>
+          <Description>Nur-Sultan, Kazakhstan.</Description>
+          {/* <Description>R u ready?</Description> */}
+          {/* <Description>Nazarbayev University.</Description> */}
           <ButtonsRow>
-            <Button href="#">Party Hard</Button>
-            <Button href="#">Schedule</Button>
+            <Button href="#">Register</Button>
+            <Button href="#">Sked & FAQ</Button>
           </ButtonsRow>
         </Info>
       </Main>
@@ -116,6 +121,7 @@ const Info = styled.div`
 const Heading = styled.h1`
   font-size: 2.68em;
   line-height: 40px;
+  opacity: ${props => (props.lowOpacity ? 0.7 : 1.0)};
 
   ${media.phablet`
     font-size: 2.2em;

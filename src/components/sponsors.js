@@ -63,7 +63,7 @@ export default Sponsors;
 
 const Container = styled.div`
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   justify-content: space-between;
   width: 100%;
   max-width: ${sizes.tablet}px;
