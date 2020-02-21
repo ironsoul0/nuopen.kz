@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import Sponsor from "./sponsor";
 import mixins from "../styles/mixins";
-import { sizes } from "../styles/media";
+import media, { sizes } from "../styles/media";
 
 const Sponsors = () => {
   const data = useStaticQuery(graphql`
@@ -69,4 +69,13 @@ const Container = styled.div`
   max-width: ${sizes.tablet}px;
 
   ${mixins.rowFlex};
+
+  ${media.desktop`
+    padding: 0 50px;
+  `};
+
+  ${media.thone`
+    overflow-y: scroll;
+    visibility: hidden;
+  `};
 `;

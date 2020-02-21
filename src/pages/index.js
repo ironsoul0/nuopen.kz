@@ -91,6 +91,7 @@ const Main = styled.main`
 
   ${media.phone`
     padding: 0 20px;
+    margin-top: 50px;
   `};
 
   ${mixins.rowFlex};

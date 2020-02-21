@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from "react";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
@@ -20,8 +21,7 @@ Sponsor.defaultProps = {
 Sponsor.propTypes = {
   link: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
-  fluid: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
+  fluid: PropTypes.object.isRequired,
   style: PropTypes.object,
 };
 
