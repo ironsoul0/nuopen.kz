@@ -4,11 +4,13 @@ import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import mixins from "../styles/mixins";
+
 const Sponsor = ({ link, width, fluid, style }) => {
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer" style={style}>
+    <SponsorLink href={link} target="_blank" rel="noopener noreferrer" style={style}>
       <SponsorImage width={width} fluid={fluid} />
-    </a>
+    </SponsorLink>
   );
 };
 
@@ -24,6 +26,15 @@ Sponsor.propTypes = {
   fluid: PropTypes.object.isRequired,
   style: PropTypes.object,
 };
+
+const SponsorLink = styled.a`
+  ${mixins.transition};
+
+  &:hover,
+  &:focus {
+    transform: translateY(-5px);
+  }
+`;
 
 const SponsorImage = styled(Img)`
   width: ${props => props.width}px;

@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import theme from "../styles/theme";
 import mixins from "../styles/mixins";
+import media from "../styles/media";
 
 const Email = () => {
   const data = useStaticQuery(graphql`
@@ -35,6 +36,10 @@ const EmailWrapper = styled.div`
   right: 50px;
   left: auto;
   bottom: 0;
+
+  ${media.desktop`
+    display: none;
+  `};
 
   &:after {
     content: "";

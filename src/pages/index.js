@@ -26,8 +26,8 @@ const IndexPage = ({ data }) => (
           <Description style={{ marginBottom: "20px" }}>
             held in the walls of Nazarbayev University.
           </Description>
-          <Description>11 April.</Description>
-          <Description>Nur-Sultan, Kazakhstan.</Description>
+          <Description>11 April - Nur-Sultan, Kazakhstan.</Description>
+          {/* <Description>Nur-Sultan, Kazakhstan.</Description> */}
           {/* <Description>R u ready?</Description> */}
           {/* <Description>Nazarbayev University.</Description> */}
           <ButtonsRow>
