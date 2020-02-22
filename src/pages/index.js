@@ -8,6 +8,7 @@ import Sponsors from "../components/sponsors";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Nav from "../components/nav";
+import FAQ from "../components/faq";
 import mixins from "../styles/mixins";
 import theme from "../styles/theme";
 import media, { sizes } from "../styles/media";
@@ -38,7 +39,7 @@ const IndexPage = ({ data }) => (
       </Main>
       <Sponsors />
     </Wrapper>
-    <p style={{ height: "200px" }}>kekke</p>
+    <FAQ />
   </Layout>
 );
 
