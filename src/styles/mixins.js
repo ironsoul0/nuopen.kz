@@ -8,6 +8,9 @@ const mixins = {
     &:focus,
     &:visited {
       text-decoration: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
     }
   `,
   transition: css`

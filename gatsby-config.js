@@ -6,6 +6,7 @@ module.exports = {
     email: `organizers@nuopen.kz`,
   },
   plugins: [
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

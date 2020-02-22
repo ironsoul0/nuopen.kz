@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import styled from "styled-components";
+import scrollTo from "gatsby-plugin-smoothscroll";
 
 import Sponsors from "../components/sponsors";
 import Layout from "../components/layout";
@@ -33,7 +34,9 @@ const IndexPage = ({ data }) => (
           {/* <Description>Nazarbayev University.</Description> */}
           <ButtonsRow>
             <Button href="#">Register</Button>
-            <Button href="#">Sked & FAQ</Button>
+            <Button onClick={() => scrollTo("#faq")} href="#">
+              Sked & FAQ
+            </Button>
           </ButtonsRow>
         </Info>
       </Main>
@@ -168,7 +171,7 @@ const ButtonsRow = styled.div`
   ${mixins.rowFlex};
 `;
 
-const Button = styled.a`
+const Button = styled.button`
   font-size: 0.84em;
   font-weight: 600;
   padding: 20px 0px;
