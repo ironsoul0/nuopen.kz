@@ -118,7 +118,7 @@ const SkedContainer = styled.div`
   & > p {
     font-weight: bold;
     margin: 0;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 
     &:first-of-type {
       color: ${theme.colors.red};

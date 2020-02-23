@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `NU Open - Spring 2020`,
-    description: `First ever ACM competition held in the walls of Nazarbayev University.`,
+    description: `First ever ICPC-style competition held in the walls of Nazarbayev University.`,
     author: `@ironsoul`,
     email: `organizers@nuopen.kz`,
   },
