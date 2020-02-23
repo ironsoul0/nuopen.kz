@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Temirzhan Yussupov <temirzhan.yussupov@gmail.com>",
   "dependencies": {
+    "@react-hook/window-size": "^1.0.12",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
