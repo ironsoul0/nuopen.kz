@@ -29,9 +29,6 @@ const IndexPage = ({ data }) => (
             held in the walls of Nazarbayev University.
           </Description>
           <Description>11 April - Nur-Sultan, Kazakhstan.</Description>
-          {/* <Description>Nur-Sultan, Kazakhstan.</Description> */}
-          {/* <Description>R u ready?</Description> */}
-          {/* <Description>Nazarbayev University.</Description> */}
           <ButtonsRow>
             <Button href="#">Register</Button>
             <Button onClick={() => scrollTo("#faq")} href="#">

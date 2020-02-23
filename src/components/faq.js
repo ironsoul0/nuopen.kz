@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { ResponsiveContainer, Heading, Subheading } from "./responsive";
 import media, { sizes } from "../styles/media";
 import mixins from "../styles/mixins";
 import theme from "../styles/theme";
@@ -39,7 +40,7 @@ const FAQElements = [
 
 const FAQ = () => {
   return (
-    <Container id="faq">
+    <ResponsiveContainer id="faq">
       <Heading>Schedule</Heading>
       <Subheading>11 April</Subheading>
       <InfoBlock>
@@ -60,57 +61,11 @@ const FAQ = () => {
           </QABlock>
         ))}
       </InfoBlock>
-    </Container>
+    </ResponsiveContainer>
   );
 };
 
 export default FAQ;
-
-const Container = styled.div`
-  padding: 0 100px;
-  padding-bottom: 40px;
-  padding-top: 80px;
-  font-size: 18px;
-
-  ${media.desktop`
-    padding-left: 50px;
-    padding-right: 50px;
-  `};
-
-  ${media.tablet`
-    font-size: 16.5px;
-    padding-left: 45px;
-    padding-right: 45px;
-  `};
-
-  ${media.thone`
-    padding-top: 20px;
-  `};
-
-  ${media.phablet`
-    padding-left: 30px;  
-    font-size: 15.5px;
-    padding-right: 30px;
-  `};
-
-  ${media.phone`
-    padding-left: 20px;  
-    font-size: 15px;
-    padding-right: 20px;
-  `};
-`;
-
-const Heading = styled.h1`
-  font-size: 2.7em;
-  margin: 0;
-`;
-
-const Subheading = styled.h1`
-  font-size: 30px;
-  margin: 0;
-  padding-top: 10px;
-  opacity: 0.5;
-`;
 
 const SkedContainer = styled.div`
   ${mixins.rowFlex};
