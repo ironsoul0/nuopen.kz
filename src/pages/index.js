@@ -66,7 +66,7 @@ const IndexPage = ({ data }) => {
             items.map((el, i) => {
               return (
                 // eslint-disable-next-line react/no-array-index-key
-                <CSSTransition key={i} classNames="fadeup" timeout={1000}>
+                <CSSTransition key={i} classNames="fadeup" timeout={500}>
                   {el}
                 </CSSTransition>
               );
@@ -87,9 +87,9 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "hackernu.png" }) {
+    placeholderImage: file(relativePath: { eq: "nu.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid(maxWidth: 2200) {
           ...GatsbyImageSharpFluid
         }
       }
