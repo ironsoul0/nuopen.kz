@@ -20,12 +20,15 @@ const IndexPage = ({ data }) => (
     <SEO title="Main" />
     <Wrapper>
       <TransitionGroup component={null}>
-        <CSSTransition key={0} classNames="fadeup" timeout={3000}>
+        {/* <CSSTransition key={0} classNames="fadeup" timeout={3000}>
           <Nav
             to="/participants"
             destination="Participants"
-            style={{ transitionDelay: "1000ms" }}
+            // style={{ transitionDelay: "1000ms" }}
           />
+        </CSSTransition> */}
+        <CSSTransition key={0} classNames="fadeup" timeout={3000}>
+          <p>kek</p>
         </CSSTransition>
         {/* <Main>
           <Image fluid={data.placeholderImage.childImageSharp.fluid} />
