@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import scrollTo from "gatsby-plugin-smoothscroll";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Sponsors from "../components/sponsors";
 import Layout from "../components/layout";
@@ -18,26 +19,34 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Main" />
     <Wrapper>
-      <Nav to="/participants" destination="Participants" />
-      <Main>
-        <Image fluid={data.placeholderImage.childImageSharp.fluid} />
-        <Info>
-          <Heading>NU Open</Heading>
-          <Heading lowOpacity>Spring 2020.</Heading>
-          <Description>First ever open ICPC-style competition</Description>
-          <Description style={{ marginBottom: "20px" }}>
-            held in the walls of Nazarbayev University.
-          </Description>
-          <Description>11 April - Nur-Sultan, Kazakhstan.</Description>
-          <ButtonsRow>
-            <Button href="#">Register</Button>
-            <Button onClick={() => scrollTo("#faq")} href="#">
-              Sked & FAQ
-            </Button>
-          </ButtonsRow>
-        </Info>
-      </Main>
-      <Sponsors />
+      <TransitionGroup component={null}>
+        <CSSTransition key={0} classNames="fadeup" timeout={3000}>
+          <Nav
+            to="/participants"
+            destination="Participants"
+            style={{ transitionDelay: "1000ms" }}
+          />
+        </CSSTransition>
+        {/* <Main>
+          <Image fluid={data.placeholderImage.childImageSharp.fluid} />
+          <Info>
+            <Heading>NU Open</Heading>
+            <Heading lowOpacity>Spring 2020.</Heading>
+            <Description>First ever open ICPC-style competition</Description>
+            <Description style={{ marginBottom: "20px" }}>
+              held in the walls of Nazarbayev University.
+            </Description>
+            <Description>11 April - Nur-Sultan, Kazakhstan.</Description>
+            <ButtonsRow>
+              <Button href="#">Register</Button>
+              <Button onClick={() => scrollTo("#faq")} href="#">
+                Sked & FAQ
+              </Button>
+            </ButtonsRow>
+          </Info>
+        </Main>
+        <Sponsors /> */}
+      </TransitionGroup>
     </Wrapper>
     <FAQ />
   </Layout>
