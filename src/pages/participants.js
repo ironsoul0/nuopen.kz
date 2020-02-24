@@ -53,7 +53,7 @@ Row.propTypes = {
 };
 
 const SecondPage = () => {
-  const elements = ["Team Name", "Surnames", "Organization", "Place", "Approved"];
+  const elements = ["Team Name", "Surnames", "Organization", "Place", "Approve"];
   const elements2 = [
     "Декартовы демоны",
     "Батырхан, Сеитов, Аблязов",
@@ -100,7 +100,7 @@ export default SecondPage;
 
 const Container = styled(ResponsiveContainer)`
   padding-left: 60px;
-  padding-right: 80px;
+  // padding-right: 120px;
 
   ${media.thone`
     padding-top: 80px;
@@ -110,7 +110,7 @@ const Container = styled(ResponsiveContainer)`
 const Table = styled.div`
   padding-top: 70px;
   overflow-x: scroll;
-  margin-left: -15px;
+  margin-left: -25px;
 `;
 
 const RowContainer = styled.div`
@@ -118,8 +118,9 @@ const RowContainer = styled.div`
   min-width: ${sizes.phone}px;
 
   padding: 15px 0px;
-  padding-left: 10px;
-  border-radius: 2px;
+  padding-left: 20px;
+  margin-right: 20px;
+  border-radius: 4px;
   ${mixins.transition};
 
   & > p {
@@ -150,6 +151,12 @@ const SecondaryRowContainer = styled(RowContainer)`
     background-color: ${theme.colors.darkBlue};
     cursor: default;
   }
+
+  ${media.desktop`
+    &:hover {
+      background-color: inherit;
+    }
+  `};
 `;
 
 const RowElement = styled.p`
