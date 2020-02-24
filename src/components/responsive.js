@@ -7,6 +7,9 @@ export const ResponsiveContainer = styled.div`
   padding-bottom: 40px;
   padding-top: 80px;
   font-size: 18px;
+  --sal-duration: 1s;
+  --sal-delay: 0.3s;
+  --sal-easing: "ease-out-back";
 
   ${media.desktop`
     padding-left: 50px;

@@ -40,7 +40,7 @@ const FAQElements = [
 
 const FAQ = () => {
   return (
-    <ResponsiveContainer id="faq" data-sal="slide-up">
+    <ResponsiveContainer id="faq" data-sal="fade">
       <Heading>Schedule</Heading>
       <Subheading>11 April</Subheading>
       <InfoBlock>
