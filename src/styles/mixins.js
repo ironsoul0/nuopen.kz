@@ -20,6 +20,15 @@ const mixins = {
     display: flex;
     align-items: center;
   `,
+  hideScrollBar: css`
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & {
+      -ms-overflow-style: none;
+    }
+  `,
 };
 
 export default mixins;

@@ -120,6 +120,7 @@ const Table = styled.div`
   padding-top: 70px;
   overflow-x: scroll;
   margin-left: -25px;
+  ${mixins.hideScrollBar};
 `;
 
 const RowContainer = styled.div`
