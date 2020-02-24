@@ -59,7 +59,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Main" />
+      <SEO />
       <Wrapper>
         <TransitionGroup component={null}>
           {isMounted &&
