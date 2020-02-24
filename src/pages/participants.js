@@ -76,7 +76,7 @@ const SecondPage = () => {
     <Layout>
       <SEO title="Participants" />
       <Nav to="/" destination="Main" />
-      <Container>
+      <Container data-sal="fade">
         <Heading>Participants</Heading>
         <Subheading>Teams ready to flex.</Subheading>
         <Table>
@@ -107,7 +107,7 @@ const SecondPage = () => {
 export default SecondPage;
 
 const Container = styled(ResponsiveContainer)`
-  padding-left: 60px;
+  padding-left: 70px;
   // padding-right: 120px;
   padding-top: 80px;
 

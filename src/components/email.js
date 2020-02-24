@@ -21,7 +21,7 @@ const Email = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    const timeout = setTimeout(() => setIsMounted(true), 500);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -30,7 +30,7 @@ const Email = () => {
   return (
     isMounted && (
       <TransitionGroup component={null}>
-        <CSSTransition classNames="fadeup" timeout={10000}>
+        <CSSTransition classNames="fadeup" timeout={1000}>
           <EmailWrapper style={{ transitionDelay: "1000ms" }}>
             <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
           </EmailWrapper>

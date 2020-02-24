@@ -19,13 +19,13 @@ const IndexPage = ({ data }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    const timeout = setTimeout(() => setIsMounted(true), 500);
     return () => clearTimeout(timeout);
   }, []);
 
   const nav = (
     <Nav
-      style={{ transitionDelay: "100ms" }}
+      style={{ transitionDelay: "200ms" }}
       to="/participants"
       destination="Participants"
       // style={{ transitionDelay: "1000ms" }}
@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => {
   );
 
   const main = (
-    <Main style={{ transitionDelay: "200ms" }}>
+    <Main style={{ transitionDelay: "400ms" }}>
       <Image fluid={data.placeholderImage.childImageSharp.fluid} />
       <Info>
         <Heading>NU Open</Heading>
@@ -66,7 +66,7 @@ const IndexPage = ({ data }) => {
             items.map((el, i) => {
               return (
                 // eslint-disable-next-line react/no-array-index-key
-                <CSSTransition key={i} classNames="fadeup" timeout={500}>
+                <CSSTransition key={i} classNames="fadeup" timeout={1000}>
                   {el}
                 </CSSTransition>
               );
@@ -94,7 +94,7 @@ export const query = graphql`
         }
       }
     }
-    bts: file(relativePath: { eq: "sponsors/btsd.png" }) {
+    bts: file(relativePath: { eq: "sponsors/bts.png" }) {
       childImageSharp {
         fluid(maxWidth: 150) {
           ...GatsbyImageSharpFluid
