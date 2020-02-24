@@ -76,7 +76,7 @@ const SecondPage = () => {
     <Layout>
       <SEO title="Participants" />
       <Nav to="/" destination="Main" />
-      <Container data-sal="fade">
+      <Container>
         <Heading>Participants</Heading>
         <Subheading>Teams ready to flex.</Subheading>
         <Table>
@@ -86,6 +86,14 @@ const SecondPage = () => {
           <Row elements={elements4} width={width} />
           <Row elements={elements2} width={width} />
           <Row elements={elements3} width={width} />
+          <Row elements={elements4} width={width} />
+          <Row elements={elements2} width={width} />
+          <Row elements={elements3} width={width} />
+          <Row elements={elements4} width={width} />
+          <Row elements={elements4} width={width} />
+          <Row elements={elements2} width={width} />
+          <Row elements={elements3} width={width} />
+          <Row elements={elements4} width={width} />
           <Row elements={elements4} width={width} />
           <Row elements={elements2} width={width} />
           <Row elements={elements3} width={width} />
@@ -101,6 +109,7 @@ export default SecondPage;
 const Container = styled(ResponsiveContainer)`
   padding-left: 60px;
   // padding-right: 120px;
+  padding-top: 80px;
 
   ${media.thone`
     padding-top: 80px;

@@ -5,7 +5,7 @@ import media from "../styles/media";
 export const ResponsiveContainer = styled.div`
   padding: 0 100px;
   padding-bottom: 40px;
-  padding-top: 80px;
+  padding-top: 40px;
   font-size: 18px;
   --sal-duration: 1s;
   --sal-delay: 0.3s;

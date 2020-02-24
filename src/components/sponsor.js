@@ -29,10 +29,15 @@ Sponsor.propTypes = {
 
 const SponsorLink = styled.a`
   ${mixins.transition};
+  transform: none;
 
-  &:hover,
-  &:focus {
+  &:hover {
     transform: translateY(-5px);
+  }
+
+  &:active,
+  &:focus {
+    transform: translateY(0px);
   }
 `;
 
