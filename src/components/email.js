@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import theme from "../styles/theme";
 import mixins from "../styles/mixins";
@@ -17,12 +18,25 @@ const Email = () => {
     }
   `);
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   const { email } = data.site.siteMetadata;
 
   return (
-    <EmailWrapper>
-      <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
-    </EmailWrapper>
+    isMounted && (
+      <TransitionGroup component={null}>
+        <CSSTransition classNames="fadeup" timeout={10000}>
+          <EmailWrapper style={{ transitionDelay: "1000ms" }}>
+            <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
+          </EmailWrapper>
+        </CSSTransition>
+      </TransitionGroup>
+    )
   );
 };
 

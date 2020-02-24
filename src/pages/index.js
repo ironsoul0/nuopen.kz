@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => {
 
   const nav = (
     <Nav
-      style={{ transitionDelay: "500ms" }}
+      style={{ transitionDelay: "100ms" }}
       to="/participants"
       destination="Participants"
       // style={{ transitionDelay: "1000ms" }}
@@ -53,7 +53,7 @@ const IndexPage = ({ data }) => {
     </Main>
   );
 
-  const sponsors = <Sponsors data={data} style={{ transitionDelay: "1200ms" }} />;
+  const sponsors = <Sponsors style={{ display: "none", transitionDelay: "1000ms" }} data={data} />;
 
   const items = [nav, main, sponsors];
 
@@ -94,7 +94,7 @@ export const query = graphql`
         }
       }
     }
-    bts: file(relativePath: { eq: "sponsors/bts.png" }) {
+    bts: file(relativePath: { eq: "sponsors/btsd.png" }) {
       childImageSharp {
         fluid(maxWidth: 150) {
           ...GatsbyImageSharpFluid

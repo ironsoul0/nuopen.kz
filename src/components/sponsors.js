@@ -6,9 +6,9 @@ import Sponsor from "./sponsor";
 import mixins from "../styles/mixins";
 import media, { sizes } from "../styles/media";
 
-const Sponsors = ({ data }) => {
+const Sponsors = ({ data, className }) => {
   return (
-    <Container>
+    <Container className={className}>
       <Sponsor fluid={data.bts.childImageSharp.fluid} width={114} link="https://btsdigital.kz/" />
       <Sponsor
         fluid={data.kazdream.childImageSharp.fluid}
@@ -33,6 +33,7 @@ const Sponsors = ({ data }) => {
 
 Sponsors.propTypes = {
   data: PropTypes.object.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default Sponsors;
