@@ -275,7 +275,7 @@ const Button = styled.button`
     }
   }
 
-  color: ${theme.colors.brightRed};
+  color: ${theme.colors.white};
 
   ${mixins.dropDecoration};
 `;
