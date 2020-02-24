@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
@@ -15,48 +15,68 @@ import mixins from "../styles/mixins";
 import theme from "../styles/theme";
 import media, { sizes } from "../styles/media";
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <CSSTransition classNames="fadeup" timeout={3000}>
-      <p>kek</p>
-    </CSSTransition>
-    <SEO title="Main" />
-    <Wrapper>
-      {/* <TransitionGroup component={null}> */}
-      {/* <CSSTransition key={0} classNames="fadeup" timeout={3000}>
-          <Nav
-            to="/participants"
-            destination="Participants"
-            // style={{ transitionDelay: "1000ms" }}
-          />
-        </CSSTransition> */}
-      <CSSTransition classNames="fadeup" timeout={3000}>
-        <p>kek</p>
-      </CSSTransition>
-      {/* <Main>
-          <Image fluid={data.placeholderImage.childImageSharp.fluid} />
-          <Info>
-            <Heading>NU Open</Heading>
-            <Heading lowOpacity>Spring 2020.</Heading>
-            <Description>First ever open ICPC-style competition</Description>
-            <Description style={{ marginBottom: "20px" }}>
-              held in the walls of Nazarbayev University.
-            </Description>
-            <Description>11 April - Nur-Sultan, Kazakhstan.</Description>
-            <ButtonsRow>
-              <Button href="#">Register</Button>
-              <Button onClick={() => scrollTo("#faq")} href="#">
-                Sked & FAQ
-              </Button>
-            </ButtonsRow>
-          </Info>
-        </Main>
-        <Sponsors /> */}
-      {/* </TransitionGroup> */}
-    </Wrapper>
-    <FAQ />
-  </Layout>
-);
+const IndexPage = ({ data }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const nav = (
+    <Nav
+      style={{ transitionDelay: "500ms" }}
+      to="/participants"
+      destination="Participants"
+      // style={{ transitionDelay: "1000ms" }}
+    />
+  );
+
+  const main = (
+    <Main style={{ transitionDelay: "200ms" }}>
+      <Image fluid={data.placeholderImage.childImageSharp.fluid} />
+      <Info>
+        <Heading>NU Open</Heading>
+        <Heading lowOpacity>Spring 2020.</Heading>
+        <Description>First ever open ICPC-style competition</Description>
+        <Description style={{ marginBottom: "20px" }}>
+          held in the walls of Nazarbayev University.
+        </Description>
+        <Description>11 April - Nur-Sultan, Kazakhstan.</Description>
+        <ButtonsRow>
+          <Button href="#">Register</Button>
+          <Button onClick={() => scrollTo("#faq")} href="#">
+            Sked & FAQ
+          </Button>
+        </ButtonsRow>
+      </Info>
+    </Main>
+  );
+
+  const sponsors = <Sponsors data={data} style={{ transitionDelay: "1200ms" }} />;
+
+  const items = [nav, main, sponsors];
+
+  return (
+    <Layout>
+      <SEO title="Main" />
+      <Wrapper>
+        <TransitionGroup component={null}>
+          {isMounted &&
+            items.map((el, i) => {
+              return (
+                // eslint-disable-next-line react/no-array-index-key
+                <CSSTransition key={i} classNames="fadeup" timeout={1000}>
+                  {el}
+                </CSSTransition>
+              );
+            })}
+        </TransitionGroup>
+      </Wrapper>
+      <FAQ />
+    </Layout>
+  );
+};
 
 IndexPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
@@ -67,9 +87,37 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "nuhacker.jpg" }) {
+    placeholderImage: file(relativePath: { eq: "hackernu.png" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    bts: file(relativePath: { eq: "sponsors/bts.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 150) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    acm: file(relativePath: { eq: "sponsors/acm.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 150) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    kazdream: file(relativePath: { eq: "sponsors/kazdream.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 150) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    okoo: file(relativePath: { eq: "sponsors/okoo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 150) {
           ...GatsbyImageSharpFluid
         }
       }

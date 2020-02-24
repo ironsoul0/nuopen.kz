@@ -1,45 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { useStaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
 
 import Sponsor from "./sponsor";
 import mixins from "../styles/mixins";
 import media, { sizes } from "../styles/media";
 
-const Sponsors = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      bts: file(relativePath: { eq: "sponsors/bts.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 150) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      acm: file(relativePath: { eq: "sponsors/acm.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 150) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      kazdream: file(relativePath: { eq: "sponsors/kazdream.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 150) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      okoo: file(relativePath: { eq: "sponsors/okoo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 150) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
+const Sponsors = ({ data }) => {
   return (
     <Container>
       <Sponsor fluid={data.bts.childImageSharp.fluid} width={114} link="https://btsdigital.kz/" />
@@ -62,6 +29,10 @@ const Sponsors = () => {
       />
     </Container>
   );
+};
+
+Sponsors.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export default Sponsors;

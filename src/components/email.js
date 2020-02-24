@@ -58,10 +58,15 @@ const EmailLink = styled.a`
   font-size: 16px;
   transform: translateY(-30px);
 
-  &:hover,
-  &:focus {
+  &:hover {
     transform: translateY(-40px);
     color: ${theme.colors.red};
+  }
+
+  &:active,
+  &:focus {
+    transform: translateY(-30px);
+    color: ${theme.colors.thinGrey};
   }
 
   ${mixins.dropDecoration};
