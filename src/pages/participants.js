@@ -76,7 +76,7 @@ const SecondPage = () => {
     <Layout>
       <SEO title="Participants" />
       <Nav to="/" destination="Main" />
-      <Container data-sal="fade">
+      <Container>
         <Heading>Participants</Heading>
         <Subheading>Teams ready to flex.</Subheading>
         <Table>
