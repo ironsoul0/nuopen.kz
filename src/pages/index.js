@@ -17,20 +17,23 @@ import media, { sizes } from "../styles/media";
 
 const IndexPage = ({ data }) => (
   <Layout>
+    <CSSTransition classNames="fadeup" timeout={3000}>
+      <p>kek</p>
+    </CSSTransition>
     <SEO title="Main" />
     <Wrapper>
-      <TransitionGroup component={null}>
-        {/* <CSSTransition key={0} classNames="fadeup" timeout={3000}>
+      {/* <TransitionGroup component={null}> */}
+      {/* <CSSTransition key={0} classNames="fadeup" timeout={3000}>
           <Nav
             to="/participants"
             destination="Participants"
             // style={{ transitionDelay: "1000ms" }}
           />
         </CSSTransition> */}
-        <CSSTransition key={0} classNames="fadeup" timeout={3000}>
-          <p>kek</p>
-        </CSSTransition>
-        {/* <Main>
+      <CSSTransition classNames="fadeup" timeout={3000}>
+        <p>kek</p>
+      </CSSTransition>
+      {/* <Main>
           <Image fluid={data.placeholderImage.childImageSharp.fluid} />
           <Info>
             <Heading>NU Open</Heading>
@@ -49,7 +52,7 @@ const IndexPage = ({ data }) => (
           </Info>
         </Main>
         <Sponsors /> */}
-      </TransitionGroup>
+      {/* </TransitionGroup> */}
     </Wrapper>
     <FAQ />
   </Layout>
