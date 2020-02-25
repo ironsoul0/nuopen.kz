@@ -87,7 +87,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "nu.png" }) {
+    placeholderImage: file(relativePath: { eq: "clear.png" }) {
       childImageSharp {
         fluid(maxWidth: 2200) {
           ...GatsbyImageSharpFluid
