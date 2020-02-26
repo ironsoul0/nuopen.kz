@@ -118,9 +118,12 @@ const Container = styled(ResponsiveContainer)`
 
 const Table = styled.div`
   padding-top: 70px;
-  overflow-x: scroll;
   margin-left: -25px;
   ${mixins.hideScrollBar};
+
+  ${media.thone`
+    overflow-x: scroll;
+  `};
 `;
 
 const RowContainer = styled.div`
