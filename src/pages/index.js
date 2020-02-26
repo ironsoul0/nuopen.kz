@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import scrollTo from "gatsby-plugin-smoothscroll";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Sponsors from "../components/sponsors";
 import Layout from "../components/layout";
@@ -16,12 +15,12 @@ import theme from "../styles/theme";
 import media, { sizes } from "../styles/media";
 
 const IndexPage = ({ data }) => {
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 500);
-    return () => clearTimeout(timeout);
-  }, []);
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => setIsMounted(true), 500);
+  //   return () => clearTimeout(timeout);
+  // }, []);
 
   const nav = (
     <Nav
@@ -61,17 +60,9 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO />
       <Wrapper>
-        <TransitionGroup component={null}>
-          {isMounted &&
-            items.map((el, i) => {
-              return (
-                // eslint-disable-next-line react/no-array-index-key
-                <CSSTransition key={i} classNames="fadeup" timeout={1000}>
-                  {el}
-                </CSSTransition>
-              );
-            })}
-        </TransitionGroup>
+        {items[0]}
+        {items[1]}
+        {items[2]}
       </Wrapper>
       <FAQ />
     </Layout>

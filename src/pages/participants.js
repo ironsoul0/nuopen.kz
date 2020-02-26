@@ -48,7 +48,7 @@ Row.defaultProps = {
 
 Row.propTypes = {
   elements: PropTypes.arrayOf(PropTypes.string).isRequired,
-  width: PropTypes.arrayOf(PropTypes.number).isRequired,
+  width: PropTypes.number.isRequired,
   main: PropTypes.bool,
 };
 

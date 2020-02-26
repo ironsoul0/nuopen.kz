@@ -39,7 +39,3 @@ const SponsorLink = styled.a`
     transform: translateY(0px);
   }
 `;
-
-const SponsorImage = styled.img`
-  width: ${props => props.width}px;
-`;

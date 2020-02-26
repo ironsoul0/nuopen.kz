@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 import Sponsor from "./sponsor";
 import mixins from "../styles/mixins";
@@ -8,9 +7,9 @@ import media, { sizes } from "../styles/media";
 
 import { BTS, KazDream, Okoo, ACM } from "../icons";
 
-const Sponsors = ({ className }) => {
+const Sponsors = () => {
   return (
-    <Container className={className}>
+    <Container>
       <Sponsor link="https://btsdigital.kz/">
         <BTS />
       </Sponsor>
@@ -25,10 +24,6 @@ const Sponsors = ({ className }) => {
       </Sponsor>
     </Container>
   );
-};
-
-Sponsors.propTypes = {
-  className: PropTypes.string.isRequired,
 };
 
 export default Sponsors;

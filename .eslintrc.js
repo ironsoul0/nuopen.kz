@@ -12,6 +12,7 @@ module.exports = {
     "node": true
   },
   "rules": {
+    "react/no-array-index-key": ["off"],
     "jsx-a11y/href-no-hash": ["off"],
     "react/forbid-prop-types": ["off"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],

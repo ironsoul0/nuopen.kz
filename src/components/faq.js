@@ -20,15 +20,15 @@ const schedule = [
     name: "Месиво",
   },
   {
-    time: "17:00 - 17:30",
+    time: "17:00 - 17:31",
     name: "Хафа танцует сальсу",
   },
   {
-    time: "12:00 - 17:00",
+    time: "12:00 - 17:02",
     name: "Нурда идет по горе",
   },
   {
-    time: "17:00 - 17:30",
+    time: "17:00 - 17:33",
     name: "Крауч поет песню",
   },
 ];
@@ -48,7 +48,7 @@ const FAQElements = [
 
 const FAQ = () => {
   return (
-    <ResponsiveContainer id="faq" data-sal="fade">
+    <ResponsiveContainer id="faq">
       <Heading>Schedule</Heading>
       <Subheading style={{ marginBottom: "60px" }}>11 April</Subheading>
       <InfoBlock>
@@ -60,15 +60,15 @@ const FAQ = () => {
         ))} */}
         <TimeWrap>
           {schedule.map((element, index) => (
-            <Time time={element.time} name={element.name} number={index} id={element.time} />
+            <Time time={element.time} name={element.name} number={index} key={index} />
           ))}
         </TimeWrap>
       </InfoBlock>
       <Heading style={{ marginTop: "-30px" }}>FAQ</Heading>
       <Subheading>Frequently Asked Questions</Subheading>
       <InfoBlock>
-        {FAQElements.map(element => (
-          <QABlock>
+        {FAQElements.map((element, index) => (
+          <QABlock key={index}>
             <p>{element.question}</p>
             <p>{element.answer}</p>
           </QABlock>

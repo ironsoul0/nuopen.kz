@@ -40,10 +40,14 @@ const Wrap = styled.a`
   }
 
   &:hover {
-    color: ${theme.colors.red};
+    & > p {
+      opacity: 1;
+    }
   }
 
   & > p {
+    ${mixins.transition};
+    opacity: 0.8;
     margin: 0;
     padding: 0;
     display: inline-block;
