@@ -86,7 +86,7 @@ const SecondPage = () => {
           <Row elements={elements4} width={width} />
           <Row elements={elements2} width={width} />
           <Row elements={elements3} width={width} />
-          <Row elements={elements4} width={width} />
+          {/* <Row elements={elements4} width={width} />
           <Row elements={elements2} width={width} />
           <Row elements={elements3} width={width} />
           <Row elements={elements4} width={width} />
@@ -97,7 +97,7 @@ const SecondPage = () => {
           <Row elements={elements4} width={width} />
           <Row elements={elements2} width={width} />
           <Row elements={elements3} width={width} />
-          <Row elements={elements4} width={width} />
+          <Row elements={elements4} width={width} /> */}
         </Table>
       </Container>
     </Layout>

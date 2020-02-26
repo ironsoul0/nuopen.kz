@@ -31,6 +31,10 @@ const IndexPage = ({ data }) => {
     />
   );
 
+  const openForm = () => {
+    window.open("https://nuopen.typeform.com/to/XMifQa", "_blank");
+  };
+
   const main = (
     <Main style={{ transitionDelay: "400ms" }}>
       <Image fluid={data.placeholderImage.childImageSharp.fluid} />
@@ -43,7 +47,7 @@ const IndexPage = ({ data }) => {
         </Description>
         <Description>11 April - Nur-Sultan, Kazakhstan.</Description>
         <ButtonsRow>
-          <Button href="#">Register</Button>
+          <Button onClick={openForm}>Register</Button>
           <Button onClick={() => scrollTo("#faq")} href="#">
             Sked & FAQ
           </Button>

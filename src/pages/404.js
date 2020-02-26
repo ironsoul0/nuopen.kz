@@ -1,14 +1,23 @@
 import React from "react";
+import styled from "styled-components";
 
-import Layout from "../components/layout";
+import GlobalStyle from "../styles/GlobalStyle";
 import SEO from "../components/seo";
 
 const NotFoundPage = () => (
-  <Layout>
+  <Container>
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+    <GlobalStyle />
+    <h1>R U LOST?</h1>
+  </Container>
 );
 
 export default NotFoundPage;
+
+const Container = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
