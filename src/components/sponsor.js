@@ -1,15 +1,15 @@
 /* eslint-disable react/forbid-prop-types */
 import React from "react";
-import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import mixins from "../styles/mixins";
 
-const Sponsor = ({ link, width, fluid, style }) => {
+const Sponsor = ({ link, style, children }) => {
   return (
     <SponsorLink href={link} target="_blank" rel="noopener noreferrer" style={style}>
-      <SponsorImage width={width} fluid={fluid} />
+      {/* <SponsorImage width={width} src={src} /> */}
+      {children}
     </SponsorLink>
   );
 };
@@ -22,8 +22,7 @@ Sponsor.defaultProps = {
 
 Sponsor.propTypes = {
   link: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  fluid: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
   style: PropTypes.object,
 };
 
@@ -41,6 +40,6 @@ const SponsorLink = styled.a`
   }
 `;
 
-const SponsorImage = styled(Img)`
+const SponsorImage = styled.img`
   width: ${props => props.width}px;
 `;

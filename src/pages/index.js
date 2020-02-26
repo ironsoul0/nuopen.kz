@@ -94,34 +94,6 @@ export const query = graphql`
         }
       }
     }
-    bts: file(relativePath: { eq: "sponsors/bts.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 150) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    acm: file(relativePath: { eq: "sponsors/acm.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 150) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    kazdream: file(relativePath: { eq: "sponsors/kazdream.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 150) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    okoo: file(relativePath: { eq: "sponsors/okoo.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 150) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
   }
 `;
 

@@ -6,33 +6,28 @@ import Sponsor from "./sponsor";
 import mixins from "../styles/mixins";
 import media, { sizes } from "../styles/media";
 
-const Sponsors = ({ data, className }) => {
+import { BTS, KazDream, Okoo, ACM } from "../icons";
+
+const Sponsors = ({ className }) => {
   return (
     <Container className={className}>
-      <Sponsor fluid={data.bts.childImageSharp.fluid} width={114} link="https://btsdigital.kz/" />
-      <Sponsor
-        fluid={data.kazdream.childImageSharp.fluid}
-        width={100}
-        link="https://kazdream.kz/"
-      />
-      <Sponsor
-        fluid={data.okoo.childImageSharp.fluid}
-        width={75}
-        link="https://okoo.kz/"
-        style={{ marginBottom: "12px" }}
-      />
-      <Sponsor
-        style={{ marginBottom: "3px" }}
-        fluid={data.acm.childImageSharp.fluid}
-        width={82}
-        link="https://acmkz.github.io/"
-      />
+      <Sponsor link="https://btsdigital.kz/">
+        <BTS />
+      </Sponsor>
+      <Sponsor link="https://kazdream.kz/">
+        <KazDream />
+      </Sponsor>
+      <Sponsor link="https://okoo.kz/" style={{ marginBottom: "12px" }}>
+        <Okoo />
+      </Sponsor>
+      <Sponsor style={{ marginBottom: "3px" }} link="https://acmkz.github.io/">
+        <ACM />
+      </Sponsor>
     </Container>
   );
 };
 
 Sponsors.propTypes = {
-  data: PropTypes.object.isRequired,
   className: PropTypes.string.isRequired,
 };
 
