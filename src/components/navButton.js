@@ -25,8 +25,8 @@ const MyLink = styled(Link)`
   padding: 17px 0px;
   width: 135px;
   text-align: center;
-  border-bottom-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
   font-weight: 300;
 
   &:hover {

@@ -7,7 +7,7 @@ import mixins from "../styles/mixins";
 const Footer = () => (
   <Container>
     <Wrap href="https://nu.edu.kz/" target="_blank" rel="noopener noreferrer">
-      <p>Designed & Built in NU, 2020</p>
+      <p>Designed & Crafted in NU © 2020</p>
       <br />
       {/* <p>
         <span role="img">😍</span>
@@ -20,7 +20,7 @@ export default Footer;
 
 const Container = styled.div`
   background-color: ${theme.colors.footer};
-  padding: 20px 0px;
+  padding: 25px 0px;
   text-align: center;
   font-weight: 300;
   font-size: 14px;

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import Time from "./time";
 import { ResponsiveContainer, Heading, Subheading } from "./responsive";
-import media, { sizes } from "../styles/media";
-import mixins from "../styles/mixins";
+import { sizes } from "../styles/media";
 import theme from "../styles/theme";
 
 const schedule = [
@@ -18,6 +18,14 @@ const schedule = [
   {
     time: "12:00 - 17:00",
     name: "Месиво",
+  },
+  {
+    time: "17:00 - 17:30",
+    name: "Хафа танцует сальсу",
+  },
+  {
+    time: "12:00 - 17:00",
+    name: "Нурда идет по горе",
   },
   {
     time: "17:00 - 17:30",
@@ -42,16 +50,21 @@ const FAQ = () => {
   return (
     <ResponsiveContainer id="faq" data-sal="fade">
       <Heading>Schedule</Heading>
-      <Subheading>11 April</Subheading>
+      <Subheading style={{ marginBottom: "60px" }}>11 April</Subheading>
       <InfoBlock>
-        {schedule.map(element => (
+        {/* {schedule.map(element => (
           <SkedContainer>
             <p>{element.time}</p>
             <p>{element.name}</p>
           </SkedContainer>
-        ))}
+        ))} */}
+        <TimeWrap>
+          {schedule.map((element, index) => (
+            <Time time={element.time} name={element.name} number={index} id={element.time} />
+          ))}
+        </TimeWrap>
       </InfoBlock>
-      <Heading>FAQ</Heading>
+      <Heading style={{ marginTop: "-30px" }}>FAQ</Heading>
       <Subheading>Frequently Asked Questions</Subheading>
       <InfoBlock>
         {FAQElements.map(element => (
@@ -67,32 +80,16 @@ const FAQ = () => {
 
 export default FAQ;
 
-const SkedContainer = styled.div`
-  ${mixins.rowFlex};
-
-  & > p {
-    font-weight: bold;
-    margin: 0;
-    margin-bottom: 18px;
-
-    &:first-of-type {
-      color: ${theme.colors.red};
-      margin-right: 50px;
-      width: 120px;
-      ${media.phablet`
-        // width: 120px;
-        margin-right: 10px;
-      `};
-    }
-
-    &:nth-last-of-type(1) {
-      color: ${theme.colors.lightGrey};
-    }
-  }
+const TimeWrap = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+  max-width: 1000px;
 `;
 
 const InfoBlock = styled.div`
-  margin-top: 40px;
+  margin-top: 70px;
   margin-bottom: 50px;
 `;
 
