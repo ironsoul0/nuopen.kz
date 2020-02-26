@@ -107,7 +107,7 @@ const SecondPage = () => {
 export default SecondPage;
 
 const Container = styled(ResponsiveContainer)`
-  padding-left: 70px;
+  padding-left: 60px;
   // padding-right: 120px;
   padding-top: 80px;
 
@@ -132,12 +132,16 @@ const RowContainer = styled.div`
 
   padding: 15px 0px;
   padding-left: 20px;
-  margin-right: 20px;
+  margin-right: 15px;
   border-radius: 4px;
   ${mixins.transition};
 
   & > p {
     margin: 0;
+
+    &:nth-last-of-type(1) {
+      max-width: 110px;
+    }
   }
 `;
 
