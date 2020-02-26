@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { useWindowWidth } from "@react-hook/window-size";
 
 import Nav from "../components/nav";
-import Footer from "../components/footer";
 import { ResponsiveContainer, Heading, Subheading } from "../components/responsive";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -101,7 +100,6 @@ const SecondPage = () => {
           <Row elements={elements4} width={width} />
         </Table>
       </Container>
-      <Footer />
     </Layout>
   );
 };

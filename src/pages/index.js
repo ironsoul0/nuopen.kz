@@ -11,7 +11,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Nav from "../components/nav";
 import FAQ from "../components/faq";
-import Footer from "../components/footer";
 import mixins from "../styles/mixins";
 import theme from "../styles/theme";
 import media, { sizes } from "../styles/media";
@@ -75,7 +74,6 @@ const IndexPage = ({ data }) => {
         </TransitionGroup>
       </Wrapper>
       <FAQ />
-      <Footer />
     </Layout>
   );
 };

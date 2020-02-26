@@ -5,14 +5,18 @@ import styled from "styled-components";
 import Email from "./email";
 import GlobalStyle from "../styles/GlobalStyle";
 import theme from "../styles/theme";
+import Footer from "./footer";
 
 const Layout = ({ children }) => {
   return (
-    <Root>
-      <GlobalStyle />
-      <Email />
-      {children}
-    </Root>
+    <>
+      <Root>
+        <GlobalStyle />
+        <Email />
+        {children}
+      </Root>
+      <Footer />
+    </>
   );
 };
 

@@ -94,10 +94,6 @@ const SkedContainer = styled.div`
 const InfoBlock = styled.div`
   margin-top: 40px;
   margin-bottom: 50px;
-
-  &:nth-last-of-type(1) {
-    margin-bottom: 0px;
-  }
 `;
 
 const QABlock = styled.div`
