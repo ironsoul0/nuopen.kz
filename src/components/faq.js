@@ -91,6 +91,10 @@ const TimeWrap = styled.div`
 const InfoBlock = styled.div`
   margin-top: 70px;
   margin-bottom: 50px;
+
+  &:nth-last-of-type(1) {
+    margin-top: 50px;
+  }
 `;
 
 const QABlock = styled.div`
