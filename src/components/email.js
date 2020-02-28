@@ -59,7 +59,7 @@ const EmailLink = styled.a`
   transform: translateY(-30px);
 
   &:hover {
-    transform: translateY(-40px);
+    transform: translateY(-35px);
     color: ${theme.colors.red};
   }
 

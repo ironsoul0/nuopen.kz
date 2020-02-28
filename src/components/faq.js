@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
 import Time from "./time";
 import { ResponsiveContainer, Heading, Subheading } from "./responsive";
 import { sizes } from "../styles/media";
 import theme from "../styles/theme";
+import sr from "../utils/sr";
 
 const schedule = [
   {
@@ -47,17 +48,14 @@ const FAQElements = [
 ];
 
 const FAQ = () => {
+  const revealContainer = useRef(null);
+  useEffect(() => sr.reveal(revealContainer.current, theme.srConfig()), []);
+
   return (
-    <ResponsiveContainer id="faq">
+    <ResponsiveContainer id="faq" ref={revealContainer}>
       <Heading>Schedule</Heading>
       <Subheading style={{ marginBottom: "60px" }}>11 April</Subheading>
       <InfoBlock>
-        {/* {schedule.map(element => (
-          <SkedContainer>
-            <p>{element.time}</p>
-            <p>{element.name}</p>
-          </SkedContainer>
-        ))} */}
         <TimeWrap>
           {schedule.map((element, index) => (
             <Time time={element.time} name={element.name} number={index} key={index} />

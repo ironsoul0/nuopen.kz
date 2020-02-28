@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { useWindowWidth } from "@react-hook/window-size";
@@ -10,6 +10,7 @@ import SEO from "../components/seo";
 import mixins from "../styles/mixins";
 import media, { sizes } from "../styles/media";
 import theme from "../styles/theme";
+import sr from "../utils/sr";
 
 const Row = ({ elements, width, main }) => {
   let flexes = [3, 4, 4, 2, 2];
@@ -54,6 +55,7 @@ Row.propTypes = {
 
 const SecondPage = () => {
   const elements = ["Team Name", "Surnames", "Organization", "Place", "Approve"];
+
   const elements2 = [
     "Декартовы демоны",
     "Батырхан, Сеитов, Аблязов",
@@ -70,22 +72,65 @@ const SecondPage = () => {
     "No",
   ];
 
+  const e = [
+    elements,
+    elements2,
+    elements3,
+    elements4,
+    elements2,
+    elements3,
+    elements4,
+    elements2,
+    elements3,
+    elements4,
+    elements3,
+    elements4,
+    elements2,
+    elements3,
+    elements4,
+  ];
+
   const width = useWindowWidth();
+  const { srConfig } = theme;
+
+  const revealTitle = useRef(null);
+  const revealTable = useRef(null);
+  const revealProjects = useRef([]);
+
+  useEffect(() => {
+    sr.reveal(revealTitle.current, srConfig());
+    sr.reveal(revealTable.current, srConfig());
+    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
+  }, []);
 
   return (
     <Layout>
       <SEO title="Participants" />
       <Nav to="/" destination="Main" />
       <Container>
-        <Heading>Participants</Heading>
-        <Subheading>Teams ready to flex.</Subheading>
-        <Table>
-          <Row main elements={elements} width={width} />
+        <div ref={revealTitle}>
+          <Heading>Participants</Heading>
+          <Subheading>Teams ready to flex.</Subheading>
+        </div>
+        <Table ref={revealTable}>
+          {e.map((element, index) => (
+            <Row
+              key={index}
+              main={index === 0}
+              width={width}
+              ref={el => {
+                revealProjects.current[index] = el;
+                return el;
+              }}
+              elements={element}
+            />
+          ))}
+          {/* <Row main elements={elements} width={width} />
           <Row elements={elements2} width={width} />
           <Row elements={elements3} width={width} />
           <Row elements={elements4} width={width} />
           <Row elements={elements2} width={width} />
-          <Row elements={elements3} width={width} />
+          <Row elements={elements3} width={width} /> */}
           {/* <Row elements={elements4} width={width} />
           <Row elements={elements2} width={width} />
           <Row elements={elements3} width={width} />

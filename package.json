@@ -26,6 +26,7 @@
     "react-helmet": "^5.2.1",
     "react-transition-group": "^4.3.0",
     "react-typography": "^0.16.19",
+    "scrollreveal": "^4.0.5",
     "styled-components": "^5.0.1",
     "typography": "^0.16.19"
   },
