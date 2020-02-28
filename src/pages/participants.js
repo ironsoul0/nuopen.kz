@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { useWindowWidth } from "@react-hook/window-size";
@@ -96,11 +96,14 @@ const SecondPage = () => {
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealTable.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
+    const cur = setTimeout(() => setDone(true), 1000);
+    return () => clearTimeout(cur);
   }, []);
 
   return (
@@ -125,24 +128,6 @@ const SecondPage = () => {
               elements={element}
             />
           ))}
-          {/* <Row main elements={elements} width={width} />
-          <Row elements={elements2} width={width} />
-          <Row elements={elements3} width={width} />
-          <Row elements={elements4} width={width} />
-          <Row elements={elements2} width={width} />
-          <Row elements={elements3} width={width} /> */}
-          {/* <Row elements={elements4} width={width} />
-          <Row elements={elements2} width={width} />
-          <Row elements={elements3} width={width} />
-          <Row elements={elements4} width={width} />
-          <Row elements={elements4} width={width} />
-          <Row elements={elements2} width={width} />
-          <Row elements={elements3} width={width} />
-          <Row elements={elements4} width={width} />
-          <Row elements={elements4} width={width} />
-          <Row elements={elements2} width={width} />
-          <Row elements={elements3} width={width} />
-          <Row elements={elements4} width={width} /> */}
         </Table>
       </Container>
     </Layout>

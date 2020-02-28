@@ -5,7 +5,7 @@ import media from "../styles/media";
 export const ResponsiveContainer = styled.div`
   padding: 0 100px;
   padding-bottom: 40px;
-  padding-top: 40px;
+  padding-top: 45px;
   font-size: 18px;
   --sal-duration: 1s;
   --sal-delay: 0.3s;
@@ -23,7 +23,7 @@ export const ResponsiveContainer = styled.div`
   `};
 
   ${media.thone`
-    padding-top: 20px;
+    padding-top: 35px;
   `};
 
   ${media.phablet`

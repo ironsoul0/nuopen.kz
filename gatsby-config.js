@@ -4,6 +4,7 @@ module.exports = {
     description: `First ever ICPC-style competition held in the walls of Nazarbayev University.`,
     author: `@ironsoul`,
     email: `organizers@nuopen.kz`,
+    formLink: "https://nuopen.typeform.com/to/XMifQa",
   },
   plugins: [
     `gatsby-plugin-scroll-reveal`,

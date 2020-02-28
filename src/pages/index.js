@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import styled from "styled-components";
@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
   );
 
   const openForm = () => {
-    window.open("https://nuopen.typeform.com/to/XMifQa", "_blank");
+    window.open(data.config.siteMetadata.formLink, "_blank");
   };
 
   const main = (
@@ -87,6 +87,11 @@ export const query = graphql`
         fluid(maxWidth: 2200) {
           ...GatsbyImageSharpFluid
         }
+      }
+    }
+    config: site {
+      siteMetadata {
+        formLink
       }
     }
   }
