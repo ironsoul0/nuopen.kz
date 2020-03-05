@@ -3,7 +3,9 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { useWindowWidth } from "@react-hook/window-size";
+import { Spring } from "react-spring/renderprops";
 
+import sr from "../utils/sr";
 import ParticipantRow from "../components/participantRow";
 import Nav from "../components/nav";
 import { ResponsiveContainer, Heading, Subheading } from "../components/responsive";
@@ -38,16 +40,24 @@ const SecondPage = ({ data }) => {
     elements3,
     elements4,
     elements2,
-    // elements3,
-    // elements4,
-    // elements2,
-    // elements3,
-    // elements4,
-    // elements3,
-    // elements4,
-    // elements2,
-    // elements3,
-    // elements4,
+    elements3,
+    elements4,
+    elements2,
+    elements3,
+    elements4,
+    elements3,
+    elements4,
+    elements2,
+    elements3,
+    elements4,
+    elements2,
+    elements3,
+    elements4,
+    elements3,
+    elements4,
+    elements2,
+    elements3,
+    elements4,
   ];
 
   const width = useWindowWidth();
@@ -59,16 +69,16 @@ const SecondPage = ({ data }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDone(true);
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <Layout showEmail={done}>
+    <Layout showSecondary={done} backgroundColor={!done ? "#2A2C37" : null}>
       <SEO title="Participants" />
       {done ? (
-        <>
+        <Config>
           <Nav to="/" destination="Main" />
           <Container>
             <div>
@@ -98,10 +108,18 @@ const SecondPage = ({ data }) => {
               </EmptyTable>
             )}
           </Container>
-        </>
+        </Config>
       ) : (
         <>
-          <p>Loading..</p>
+          <LoadingBlock>
+            <Spring config={{ tension: 20 }} from={{ number: 0 }} to={{ number: 1 }}>
+              {props => (
+                <div>
+                  Running on pretest <span>{Math.floor(props.number * 30)}</span>
+                </div>
+              )}
+            </Spring>
+          </LoadingBlock>
         </>
       )}
     </Layout>
@@ -123,6 +141,10 @@ SecondPage.propTypes = {
 };
 
 export default SecondPage;
+
+const Config = styled.div`
+  animation: ${mixins.fadeDown} 500ms ${theme.easing};
+`;
 
 const Container = styled(ResponsiveContainer)`
   padding-left: 70px;
@@ -159,4 +181,13 @@ const EmptyTable = styled.p`
   font-size: 0.8em;
   opacity: 0.8;
   margin-top: 50px;
+`;
+
+const LoadingBlock = styled.div`
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  color: ${theme.colors.white};
 `;

@@ -7,8 +7,13 @@ module.exports = {
     formLink: "https://nuopen.typeform.com/to/XMifQa",
   },
   plugins: [
-    `gatsby-plugin-scroll-reveal`,
-    `gatsby-plugin-smoothscroll`,
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.5,
+        once: true,
+      },
+    }`gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -7,26 +7,28 @@ import GlobalStyle from "../styles/GlobalStyle";
 import theme from "../styles/theme";
 import Footer from "./footer";
 
-const Layout = ({ children, showEmail }) => {
+const Layout = ({ children, showSecondary, backgroundColor }) => {
   return (
-    <>
+    <div style={backgroundColor && { backgroundColor }}>
       <Root>
         <GlobalStyle />
-        {showEmail && <Email />}
+        {showSecondary && <Email />}
         {children}
       </Root>
-      <Footer />
-    </>
+      {showSecondary && <Footer />}
+    </div>
   );
 };
 
 Layout.defaultProps = {
-  showEmail: true
-}
+  showSecondary: true,
+  backgroundColor: null,
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  showEmail: PropTypes.bool
+  showSecondary: PropTypes.bool,
+  backgroundColor: PropTypes.oneOf([String, null]),
 };
 
 export default Layout;
