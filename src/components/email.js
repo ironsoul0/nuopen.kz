@@ -33,9 +33,10 @@ const EmailWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   position: fixed;
-  right: 50px;
+  right: 40px;
   left: auto;
   bottom: 0;
+  z-index: 1;
 
   ${media.desktop`
     display: none;

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { graphql } from "gatsby";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { useWindowWidth } from "@react-hook/window-size";
@@ -53,8 +54,8 @@ Row.propTypes = {
   main: PropTypes.bool,
 };
 
-const SecondPage = () => {
-  const elements = ["Team Name", "Surnames", "Organization", "Place", "Approve"];
+const SecondPage = ({ data }) => {
+  const elements = ["Team Name", "Surnames", "Organization", "Place", "Check"];
 
   const elements2 = [
     "Декартовы демоны",
@@ -106,6 +107,8 @@ const SecondPage = () => {
     return () => clearTimeout(cur);
   }, []);
 
+  const { email } = data.site.siteMetadata;
+
   return (
     <Layout>
       <SEO title="Participants" />
@@ -129,9 +132,26 @@ const SecondPage = () => {
             />
           ))}
         </Table>
+        <Note>
+          * Please <Contact href={`mailto:${email}`}>contact us</Contact> if something changes.
+        </Note>
       </Container>
     </Layout>
   );
+};
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        email
+      }
+    }
+  }
+`;
+
+SecondPage.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export default SecondPage;
@@ -140,7 +160,7 @@ const Container = styled(ResponsiveContainer)`
   padding-left: 70px;
   // padding-right: 120px;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 
   ${media.thone`
     padding-top: 80px;
@@ -162,7 +182,7 @@ const RowContainer = styled.div`
   min-width: ${sizes.phone}px;
 
   padding: 15px 0px;
-  padding-left: 20px;
+  padding-left: 15px;
   margin-right: 15px;
   border-radius: 4px;
   ${mixins.transition};
@@ -171,7 +191,7 @@ const RowContainer = styled.div`
     margin: 0;
 
     &:nth-last-of-type(1) {
-      max-width: 110px;
+      max-width: 80px;
     }
   }
 `;
@@ -210,7 +230,17 @@ const SecondaryRowContainer = styled(RowContainer)`
 const RowElement = styled.p`
   flex: ${props => props.flex};
   overflow: hidden;
-  padding: 0px 10px;
+  padding: 0px 13px;
   font-size: 0.9em;
   line-height: 20px;
+`;
+
+const Note = styled.p`
+  font-size: 0.73em;
+  opacity: 0.6;
+  margin-top: 30px;
+`;
+
+const Contact = styled.a`
+  color: ${theme.colors.white};
 `;

@@ -98,10 +98,15 @@ export const query = graphql`
 `;
 
 const Wrapper = styled.div`
-  min-height: 100vh;
+  min-height: max(100vh, 720px);
+  // min-height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  ${media.tablet`
+    min-height: max(100vh, 650px);
+  `};
 `;
 
 const Main = styled.main`
