@@ -15,6 +15,7 @@ const theme = {
     darkGrey: "#D7D7DA",
     thinGrey: "#A8B2D1",
     footer: "#282A33",
+    loadingBack: "#2A2C37",
   },
   fontSizes: {
     xs: "16px",

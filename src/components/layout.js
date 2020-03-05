@@ -9,7 +9,7 @@ import Footer from "./footer";
 
 const Layout = ({ children, showSecondary, backgroundColor }) => {
   return (
-    <div style={backgroundColor && { backgroundColor }}>
+    <div style={{ backgroundColor }}>
       <Root>
         <GlobalStyle />
         {showSecondary && <Email />}
@@ -22,13 +22,13 @@ const Layout = ({ children, showSecondary, backgroundColor }) => {
 
 Layout.defaultProps = {
   showSecondary: true,
-  backgroundColor: null,
+  backgroundColor: theme.colors.dark,
 };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   showSecondary: PropTypes.bool,
-  backgroundColor: PropTypes.oneOf([String, null]),
+  backgroundColor: PropTypes.string,
 };
 
 export default Layout;

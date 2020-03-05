@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { useWindowWidth } from "@react-hook/window-size";
 import { Spring } from "react-spring/renderprops";
 
-import sr from "../utils/sr";
 import ParticipantRow from "../components/participantRow";
 import Nav from "../components/nav";
 import { ResponsiveContainer, Heading, Subheading } from "../components/responsive";
@@ -14,9 +13,10 @@ import SEO from "../components/seo";
 import mixins from "../styles/mixins";
 import media from "../styles/media";
 import theme from "../styles/theme";
+import getParticipantInfo from "../utils/getParticipantInfo";
 
 const SecondPage = ({ data }) => {
-  const elements = ["Team Name", "Surnames", "Organization", "Place", "Check"];
+  const elements = ["Team Name", "Surnames", "Organization", "Type", "Check"];
 
   const elements2 = [
     "Декартовы демоны",
@@ -60,24 +60,55 @@ const SecondPage = ({ data }) => {
     // elements4,
   ];
 
+  const getSheetValues = async () => {
+    const request = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GATSBY_SHEET_ID}/values/A2:U100`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.GATSBY_ACCESS_TOKEN}`,
+        },
+      }
+    );
+
+    const sheetData = await request.json();
+    const parsedData = sheetData.values.map(element => getParticipantInfo(element));
+
+    return parsedData;
+  };
+
   const width = useWindowWidth();
 
   const { email } = data.site.siteMetadata;
 
   const [done, setDone] = useState(false);
+  const [participants, setParticipants] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setDone(true);
     }, 1500);
 
+    getSheetValues()
+      .then(sheetValues => {
+        setParticipants(sheetValues);
+      })
+      .catch(() => {
+        setParticipants([]);
+      });
+
     return () => clearTimeout(timer);
   }, []);
 
+  const finishedLoading = done && participants;
+
   return (
-    <Layout showSecondary={done} backgroundColor={!done ? "#2A2C37" : null}>
+    <Layout
+      showSecondary={done}
+      backgroundColor={!finishedLoading ? theme.colors.loadingBack : null}
+    >
       <SEO title="Participants" />
-      {done ? (
+      {finishedLoading ? (
         <Config>
           <Nav to="/" destination="Main" />
           <Container>
@@ -85,10 +116,10 @@ const SecondPage = ({ data }) => {
               <Heading>Participants</Heading>
               <Subheading>Teams ready to flex.</Subheading>
             </div>
-            {e.length > 0 ? (
+            {participants.length > 0 ? (
               <>
                 <Table>
-                  {e.map((element, index) => (
+                  {[elements, ...participants].map((element, index) => (
                     <ParticipantRow
                       key={index}
                       main={index === 0}
@@ -192,5 +223,6 @@ const LoadingBlock = styled.div`
   justify-content: center;
   font-weight: 200;
   color: ${theme.colors.white};
-  font-size: 1.2em;
+  font-size: 1.1em;
+  opacity: 0.7;
 `;
