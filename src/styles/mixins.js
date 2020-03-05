@@ -1,5 +1,7 @@
 import { css, keyframes } from "styled-components";
 
+import theme from "./theme";
+
 const mixins = {
   dropDecoration: css`
     &,
@@ -39,6 +41,12 @@ const mixins = {
       opacity: 1;
       transform: translateY(0px);
     }
+  `,
+  smoothAppear: (duration = 500, delay = 0) => css`
+    opacity: 0;
+    animation: ${mixins.fadeDown} ${duration}ms ${theme.easing};
+    animation-delay: ${delay}ms;
+    animation-fill-mode: forwards;
   `,
 };
 
