@@ -15,51 +15,9 @@ import media from "../styles/media";
 import theme from "../styles/theme";
 import getParticipantInfo from "../utils/getParticipantInfo";
 
+const FIRST_ROW = ["Team Name", "Surnames", "Organization", "Type", "Check"];
+
 const SecondPage = ({ data }) => {
-  const elements = ["Team Name", "Surnames", "Organization", "Type", "Check"];
-
-  const elements2 = [
-    "Декартовы демоны",
-    "Батырхан, Сеитов, Аблязов",
-    "Назарбаев Университет",
-    "Onsite",
-    "Yes",
-  ];
-  const elements3 = ["Я люблю Краучиху", "Крауч, Рауан, Краучиха", "КБТУ", "Onsite", "Yes"];
-  const elements4 = [
-    "Что, где, когда?",
-    "Алихан, Санчо, Нурдаулет",
-    "International IT University",
-    "Offsite",
-    "No",
-  ];
-
-  const e = [
-    elements,
-    elements2,
-    elements3,
-    elements4,
-    elements2,
-    // elements3,
-    // elements4,
-    // elements2,
-    // elements3,
-    // elements4,
-    // elements3,
-    // elements4,
-    // elements2,
-    // elements3,
-    // elements4,
-    // elements2,
-    // elements3,
-    // elements4,
-    // elements3,
-    // elements4,
-    // elements2,
-    // elements3,
-    // elements4,
-  ];
-
   const getSheetValues = async () => {
     const request = await fetch(
       `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GATSBY_SHEET_ID}/values/A2:U100`,
@@ -119,7 +77,7 @@ const SecondPage = ({ data }) => {
             {participants.length > 0 ? (
               <>
                 <Table>
-                  {[elements, ...participants].map((element, index) => (
+                  {[FIRST_ROW, ...participants].map((element, index) => (
                     <ParticipantRow
                       key={index}
                       main={index === 0}

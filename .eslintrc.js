@@ -19,7 +19,7 @@ module.exports = {
     "max-len": [
       "warn",
       {
-        "code": 80,
+        "code": 120,
         "tabWidth": 2,
         "comments": 80,
         "ignoreComments": false,

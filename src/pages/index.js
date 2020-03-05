@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import styled from "styled-components";
