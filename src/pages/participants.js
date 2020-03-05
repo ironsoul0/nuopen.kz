@@ -143,12 +143,13 @@ SecondPage.propTypes = {
 export default SecondPage;
 
 const Config = styled.div`
+  opacity: 0;
   animation: ${mixins.fadeDown} 500ms ${theme.easing};
+  animation-fill-mode: forwards;
 `;
 
 const Container = styled(ResponsiveContainer)`
   padding-left: 70px;
-  // padding-right: 120px;
   padding-top: 80px;
   padding-bottom: 60px;
 
@@ -158,6 +159,11 @@ const Container = styled(ResponsiveContainer)`
 `;
 
 const Table = styled.div`
+  opacity: 0;
+  animation: ${mixins.fadeDown} 500ms ${theme.easing};
+  animation-delay: 400ms;
+  animation-fill-mode: forwards;
+
   padding-top: 70px;
   margin-left: -25px;
   ${mixins.hideScrollBar};
