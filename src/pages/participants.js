@@ -4,6 +4,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { useWindowWidth } from "@react-hook/window-size";
 import { Spring } from "react-spring/renderprops";
+import Div100vh from "react-div-100vh";
 
 import ParticipantRow from "../components/participantRow";
 import Nav from "../components/nav";
@@ -20,13 +21,7 @@ const FIRST_ROW = ["Team Name", "Surnames", "Organization", "Type", "Check"];
 const SecondPage = ({ data }) => {
   const getSheetValues = async () => {
     const request = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GATSBY_SHEET_ID}/values/A2:U100`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.GATSBY_ACCESS_TOKEN}`,
-        },
-      }
+      `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GATSBY_SHEET_ID}/values/A2:U100?key=${process.env.GATSBY_API_KEY}`
     );
 
     const sheetData = await request.json();
@@ -58,7 +53,7 @@ const SecondPage = ({ data }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  const finishedLoading = done && participants;
+  const finishedLoading = !!(done && participants);
 
   return (
     <Layout
@@ -172,9 +167,11 @@ const EmptyTable = styled.p`
   font-size: 0.8em;
   opacity: 0.8;
   margin-top: 50px;
+  margin-left: 3px;
+  line-height: 20px;
 `;
 
-const LoadingBlock = styled.div`
+const LoadingBlock = styled(Div100vh)`
   height: 100vh;
   display: flex;
   align-items: center;
