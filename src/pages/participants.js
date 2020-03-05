@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import PropTypes from "prop-types";
@@ -11,7 +11,6 @@ import SEO from "../components/seo";
 import mixins from "../styles/mixins";
 import media, { sizes } from "../styles/media";
 import theme from "../styles/theme";
-import sr from "../utils/sr";
 
 const Row = ({ elements, width, main }) => {
   let flexes = [3, 4, 4, 2, 2];
@@ -92,20 +91,6 @@ const SecondPage = ({ data }) => {
   ];
 
   const width = useWindowWidth();
-  const { srConfig } = theme;
-
-  const revealTitle = useRef(null);
-  const revealTable = useRef(null);
-  const revealProjects = useRef([]);
-  const [done, setDone] = useState(false);
-
-  useEffect(() => {
-    sr.reveal(revealTitle.current, srConfig());
-    sr.reveal(revealTable.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
-    const cur = setTimeout(() => setDone(true), 1000);
-    return () => clearTimeout(cur);
-  }, []);
 
   const { email } = data.site.siteMetadata;
 
@@ -114,22 +99,13 @@ const SecondPage = ({ data }) => {
       <SEO title="Participants" />
       <Nav to="/" destination="Main" />
       <Container>
-        <div ref={revealTitle}>
+        <div>
           <Heading>Participants</Heading>
           <Subheading>Teams ready to flex.</Subheading>
         </div>
-        <Table ref={revealTable}>
+        <Table>
           {e.map((element, index) => (
-            <Row
-              key={index}
-              main={index === 0}
-              width={width}
-              ref={el => {
-                revealProjects.current[index] = el;
-                return el;
-              }}
-              elements={element}
-            />
+            <Row key={index} main={index === 0} width={width} elements={element} />
           ))}
         </Table>
         <Note>
