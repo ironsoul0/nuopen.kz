@@ -54,6 +54,10 @@ const Container = styled.div`
   ${media.tablet`
     padding: 30px 30px;
   `};
+
+  ${media.phone`
+    padding: 30px 20px;
+  `};
 `;
 
 const Bar = styled.div`

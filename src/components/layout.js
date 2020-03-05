@@ -7,12 +7,12 @@ import GlobalStyle from "../styles/GlobalStyle";
 import theme from "../styles/theme";
 import Footer from "./footer";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showEmail }) => {
   return (
     <>
       <Root>
         <GlobalStyle />
-        <Email />
+        {showEmail && <Email />}
         {children}
       </Root>
       <Footer />
@@ -20,8 +20,13 @@ const Layout = ({ children }) => {
   );
 };
 
+Layout.defaultProps = {
+  showEmail: true
+}
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  showEmail: PropTypes.bool
 };
 
 export default Layout;
