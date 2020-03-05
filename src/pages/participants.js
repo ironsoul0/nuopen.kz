@@ -62,7 +62,7 @@ const SecondPage = ({ data }) => {
 
   return (
     <Layout
-      showSecondary={done}
+      showSecondary={finishedLoading}
       backgroundColor={!finishedLoading ? theme.colors.loadingBack : null}
     >
       <SEO title="Participants" />
@@ -181,6 +181,6 @@ const LoadingBlock = styled.div`
   justify-content: center;
   font-weight: 200;
   color: ${theme.colors.white};
-  font-size: 1.1em;
+  font-size: 0.9em;
   opacity: 0.7;
 `;
