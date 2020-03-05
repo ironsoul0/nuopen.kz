@@ -40,24 +40,24 @@ const SecondPage = ({ data }) => {
     elements3,
     elements4,
     elements2,
-    elements3,
-    elements4,
-    elements2,
-    elements3,
-    elements4,
-    elements3,
-    elements4,
-    elements2,
-    elements3,
-    elements4,
-    elements2,
-    elements3,
-    elements4,
-    elements3,
-    elements4,
-    elements2,
-    elements3,
-    elements4,
+    // elements3,
+    // elements4,
+    // elements2,
+    // elements3,
+    // elements4,
+    // elements3,
+    // elements4,
+    // elements2,
+    // elements3,
+    // elements4,
+    // elements2,
+    // elements3,
+    // elements4,
+    // elements3,
+    // elements4,
+    // elements2,
+    // elements3,
+    // elements4,
   ];
 
   const width = useWindowWidth();
@@ -115,6 +115,7 @@ const SecondPage = ({ data }) => {
             <Spring config={{ tension: 20 }} from={{ number: 0 }} to={{ number: 1 }}>
               {props => (
                 <div>
+                  {/* eslint-disable-next-line react/prop-types */}
                   Running on pretest <span>{Math.floor(props.number * 30)}</span>
                 </div>
               )}
@@ -189,6 +190,7 @@ const LoadingBlock = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 300;
+  font-weight: 200;
   color: ${theme.colors.white};
+  font-size: 1.2em;
 `;

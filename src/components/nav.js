@@ -46,7 +46,7 @@ Nav.propTypes = {
 };
 
 const Container = styled.div`
-  padding: 30px 60px;
+  padding: 30px 50px;
   justify-content: space-between;
 
   ${mixins.rowFlex};

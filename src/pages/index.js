@@ -133,7 +133,7 @@ const Main = styled.main`
   `};
 
   ${media.phablet`
-    padding: 0 25px;
+    padding: 0 30px;
   `};
 
   ${media.phone`
