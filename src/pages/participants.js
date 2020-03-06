@@ -15,6 +15,7 @@ import mixins from "../styles/mixins";
 import media from "../styles/media";
 import theme from "../styles/theme";
 import getParticipantInfo from "../utils/getParticipantInfo";
+import cache from "../utils/cache";
 
 const FIRST_ROW = ["Team Name", "Surnames", "Organization", "Type", "Check"];
 
@@ -40,20 +41,26 @@ const SecondPage = ({ data }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDone(true);
-    }, 1500);
+    }, 500);
 
-    getSheetValues()
-      .then(sheetValues => {
-        setParticipants(sheetValues);
-      })
-      .catch(() => {
-        setParticipants([]);
-      });
+    if (cache.participants) {
+      setParticipants(cache.participants);
+      setDone(true);
+    } else {
+      getSheetValues()
+        .then(sheetValues => {
+          setParticipants(sheetValues);
+          cache.setParticipants(sheetValues);
+        })
+        .catch(() => {
+          setParticipants([]);
+        });
+    }
 
     return () => clearTimeout(timer);
   }, []);
 
-  const finishedLoading = !!(done && participants);
+  const finishedLoading = !!(participants && done);
 
   return (
     <Layout
@@ -96,11 +103,11 @@ const SecondPage = ({ data }) => {
       ) : (
         <>
           <LoadingBlock>
-            <Spring config={{ tension: 20 }} from={{ number: 0 }} to={{ number: 1 }}>
+            <Spring config={{ tension: 15 }} from={{ number: 0 }} to={{ number: 1 }}>
               {props => (
                 <div>
                   {/* eslint-disable-next-line react/prop-types */}
-                  Running on pretest <span>{Math.floor(props.number * 30)}</span>
+                  Running on test <span>{Math.floor(props.number * 30)}</span>
                 </div>
               )}
             </Spring>
