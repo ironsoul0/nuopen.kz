@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Div100vh from "react-div-100vh";
 
 import GlobalStyle from "../styles/GlobalStyle";
 import SEO from "../components/seo";
@@ -15,7 +14,8 @@ const NotFoundPage = () => (
 
 export default NotFoundPage;
 
-const Container = styled(Div100vh)`
+const Container = styled.div`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
