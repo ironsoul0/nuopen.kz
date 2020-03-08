@@ -9,41 +9,54 @@ import sr from "../utils/sr";
 
 const schedule = [
   {
-    time: "09:00 - 09:15",
-    name: "Пробный тур",
+    time: "10:00 - 11:00",
+    name: "Registration - Library",
   },
   {
-    time: "09:30 - 10:30",
-    name: "Кекосити",
+    time: "11:00 - 11:30",
+    name: "Opening - 5.103",
+  },
+  {
+    time: "11:30 - 12:00",
+    name: "Team Placement",
   },
   {
     time: "12:00 - 17:00",
-    name: "Месиво",
+    name: "Solving Time",
   },
   {
-    time: "17:00 - 17:31",
-    name: "Хафа танцует сальсу",
+    time: "17:00 - 18:00",
+    name: "Dinner",
   },
   {
-    time: "12:00 - 17:02",
-    name: "Нурда идет по горе",
-  },
-  {
-    time: "17:00 - 17:33",
-    name: "Крауч поет песню",
+    time: "18:00 - 18:30",
+    name: "Closing Ceremony",
   },
 ];
 
 const FAQElements = [
   {
-    question: "01. What the heck is ICPC?",
+    question: "What the heck is ICPC?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris nisi, e u lacinia nibh dignissim eget. Praesent sagittis orci nec lacus viverra fringilla. Mauris rutrum feugiat accumsan. Morbi ac justo at risus malesuada luctus maximus non lectus. Aliquam placerat ipsum id dapibus euismod.",
+      "The International Collegiate Programming Contest is an algorithmic programming contest for college students. Teams of three, representing their university, work to solve the most real-world problems. Quite simply, it is the oldest, largest, and most prestigious programming contest in the world.",
   },
   {
-    question: "02. Why krauch is krauch?",
+    question: "Who are eligible to participate?",
+    answer: "Since it is an open competition, everyone is welcome!",
+  },
+  {
+    question: "What kind of problems we will solve?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris nisi, e u lacinia nibh dignissim eget. Praesent sagittis orci nec lacus viverra fringilla. Mauris rutrum feugiat accumsan. Morbi ac justo at risus malesuada luctus maximus non lectus.",
+      "Have a look at <a href='https://codeforces.com/problemset/problem/4/A'>this</a> and <a href='https://acmp.ru/index.asp?main=task&id_task=1'>this</a>. These are some problems to get you familiar with a format.",
+  },
+  {
+    question: "Who have prepared the problems?",
+    answer:
+      "The true feature of the NU Open is that all problems are prepared by current NU students and our legendary NU alumni.",
+  },
+  {
+    question: "What are the prizes?",
+    answer: "Come onsite and you will know, we have prepared very interesting presents :)",
   },
 ];
 
@@ -67,8 +80,10 @@ const FAQ = () => {
       <InfoBlock>
         {FAQElements.map((element, index) => (
           <QABlock key={index}>
-            <p>{element.question}</p>
-            <p>{element.answer}</p>
+            <p>
+              0{index}. {element.question}
+            </p>
+            <p dangerouslySetInnerHTML={{ __html: element.answer }} />
           </QABlock>
         ))}
       </InfoBlock>
@@ -99,6 +114,10 @@ const QABlock = styled.div`
   & > p {
     margin: 0;
     margin-bottom: 25px;
+
+    & > a {
+      color: ${theme.colors.lightGrey};
+    }
 
     &:first-of-type {
       color: ${theme.colors.red};

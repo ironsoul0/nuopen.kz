@@ -11,7 +11,8 @@ module.exports = {
     "jest": true,
     "node": true
   },
-  "rules": {
+  "rules": { 
+    "react/no-danger": ["off"],
     "react/no-array-index-key": ["off"],
     "jsx-a11y/href-no-hash": ["off"],
     "react/forbid-prop-types": ["off"],
