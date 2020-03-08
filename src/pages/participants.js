@@ -14,21 +14,16 @@ import SEO from "../components/seo";
 import mixins from "../styles/mixins";
 import media from "../styles/media";
 import theme from "../styles/theme";
-import getParticipantInfo from "../utils/getParticipantInfo";
 import cache from "../utils/cache";
 
 const FIRST_ROW = ["Team Name", "Surnames", "Organization", "Type", "Check"];
 
 const SecondPage = ({ data }) => {
   const getSheetValues = async () => {
-    const request = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GATSBY_SHEET_ID}/values/A2:U100?key=${process.env.GATSBY_API_KEY}`
-    );
-
+    const request = await fetch(`${process.env.GATSBY_API_URL}/participants`);
     const sheetData = await request.json();
-    const parsedData = sheetData.values.map(element => getParticipantInfo(element));
 
-    return parsedData;
+    return sheetData;
   };
 
   const width = useWindowWidth();
