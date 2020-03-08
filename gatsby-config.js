@@ -7,6 +7,12 @@ module.exports = {
     formLink: "https://nuopen.typeform.com/to/XMifQa",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-158866644-2",
+      },
+    },
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
