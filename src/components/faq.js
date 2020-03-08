@@ -10,11 +10,11 @@ import sr from "../utils/sr";
 const schedule = [
   {
     time: "10:00 - 11:00",
-    name: "Registration - Library",
+    name: "Registration",
   },
   {
     time: "11:00 - 11:30",
-    name: "Opening - 5.103",
+    name: "Opening Ceremony",
   },
   {
     time: "11:30 - 12:00",
@@ -22,7 +22,7 @@ const schedule = [
   },
   {
     time: "12:00 - 17:00",
-    name: "Solving Time",
+    name: "Flexing",
   },
   {
     time: "17:00 - 18:00",
@@ -45,7 +45,7 @@ const FAQElements = [
     answer: "Since it is an open competition, everyone is welcome!",
   },
   {
-    question: "What kind of problems we will solve?",
+    question: "What kind of problems will we solve?",
     answer:
       "Have a look at <a href='https://codeforces.com/problemset/problem/4/A'>this</a> and <a href='https://acmp.ru/index.asp?main=task&id_task=1'>this</a>. These are some problems to get you familiar with a format.",
   },
@@ -67,7 +67,7 @@ const FAQ = () => {
   return (
     <ResponsiveContainer id="faq" ref={revealContainer}>
       <Heading>Schedule</Heading>
-      <Subheading style={{ marginBottom: "60px" }}>11 April</Subheading>
+      <Subheading style={{ marginBottom: "60px" }}>11 April - NU Library</Subheading>
       <InfoBlock>
         <TimeWrap>
           {schedule.map((element, index) => (

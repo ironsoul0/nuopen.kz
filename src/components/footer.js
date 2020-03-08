@@ -8,7 +8,7 @@ const Footer = () => (
   <Container>
     <Wrap href="https://nu.edu.kz/" target="_blank" rel="noopener noreferrer">
       <p>Designed & Crafted in NU © 2020</p>
-      <br />
+      {/* <br /> */}
       {/* <p>
         <span role="img">😍</span>
       </p> */}
