@@ -8,7 +8,6 @@ import mixins from "../styles/mixins";
 const Sponsor = ({ link, style, children }) => {
   return (
     <SponsorLink href={link} target="_blank" rel="noopener noreferrer" style={style}>
-      {/* <SponsorImage width={width} src={src} /> */}
       {children}
     </SponsorLink>
   );

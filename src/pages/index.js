@@ -15,21 +15,7 @@ import theme from "../styles/theme";
 import media, { sizes } from "../styles/media";
 
 const IndexPage = ({ data }) => {
-  // const [isMounted, setIsMounted] = useState(false);
-
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => setIsMounted(true), 500);
-  //   return () => clearTimeout(timeout);
-  // }, []);
-
-  const nav = (
-    <Nav
-      style={{ transitionDelay: "200ms" }}
-      to="/participants"
-      destination="Participants"
-      // style={{ transitionDelay: "1000ms" }}
-    />
-  );
+  const nav = <Nav to="/participants" destination="Participants" />;
 
   const openForm = () => {
     window.open(data.config.siteMetadata.formLink, "_blank");
@@ -56,7 +42,7 @@ const IndexPage = ({ data }) => {
     </Main>
   );
 
-  const sponsors = <Sponsors style={{ display: "none", transitionDelay: "1000ms" }} data={data} />;
+  const sponsors = <Sponsors data={data} />;
 
   const items = [nav, main, sponsors];
 
@@ -74,7 +60,6 @@ const IndexPage = ({ data }) => {
 };
 
 IndexPage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };
 
@@ -98,15 +83,20 @@ export const query = graphql`
 `;
 
 const Wrapper = styled.div`
-  min-height: max(100vh, 720px);
-  // min-height: 700px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   ${media.tablet`
-    min-height: max(100vh, 650px);
+    @media screen and (max-height: 650px) {
+      min-height: 650px;
+    }
   `};
+
+  @media screen and (max-height: 720px) {
+    min-height: 720px;
+  }
 `;
 
 const Main = styled.main`

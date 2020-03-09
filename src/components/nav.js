@@ -80,13 +80,10 @@ const Contact = styled.a`
   &:hover {
     color: ${theme.colors.darkGrey};
   }
-
-  // animation: ${mixins.fadeDown} 300ms ${theme.easing};
 `;
 
 const LogoLink = styled(Link)`
   margin-top: 15px;
-  // animation: ${mixins.fadeDown} 300ms ${theme.easing};
 `;
 
 const MyLogo = styled(Logo)`

@@ -71,7 +71,6 @@ const RowContainer = styled.div`
 const MainRowContainer = styled(RowContainer)`
   font-weight: bold;
   color: ${theme.colors.mediumGrey};
-  // background-color: black;
 
   margin-bottom: 10px;
 `;

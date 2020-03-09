@@ -8,10 +8,6 @@ const Footer = () => (
   <Container>
     <Wrap href="https://nu.edu.kz/" target="_blank" rel="noopener noreferrer">
       <p>Designed & Crafted in NU © 2020</p>
-      {/* <br /> */}
-      {/* <p>
-        <span role="img">😍</span>
-      </p> */}
     </Wrap>
   </Container>
 );
@@ -51,9 +47,5 @@ const Wrap = styled.a`
     margin: 0;
     padding: 0;
     display: inline-block;
-
-    // &:nth-last-of-type(1) {
-    //   margin-top: 6px;
-    // }
   }
 `;
