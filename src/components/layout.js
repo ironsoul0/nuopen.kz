@@ -7,12 +7,12 @@ import GlobalStyle from "../styles/GlobalStyle";
 import theme from "../styles/theme";
 import Footer from "./footer";
 
-const Layout = ({ children, showSecondary, backgroundColor }) => {
+const Layout = ({ children, showSecondary, backgroundColor, participantsPage }) => {
   return (
     <div style={{ backgroundColor }}>
       <Root>
         <GlobalStyle />
-        {showSecondary && <Email />}
+        {showSecondary && <Email isParticipants={participantsPage} />}
         {children}
       </Root>
       {showSecondary && <Footer />}
@@ -23,12 +23,14 @@ const Layout = ({ children, showSecondary, backgroundColor }) => {
 Layout.defaultProps = {
   showSecondary: true,
   backgroundColor: theme.colors.dark,
+  participantsPage: false,
 };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   showSecondary: PropTypes.bool,
   backgroundColor: PropTypes.string,
+  participantsPage: PropTypes.bool,
 };
 
 export default Layout;

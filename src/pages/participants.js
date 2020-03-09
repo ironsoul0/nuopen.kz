@@ -61,6 +61,7 @@ const SecondPage = ({ data }) => {
     <Layout
       showSecondary={finishedLoading}
       backgroundColor={!finishedLoading ? theme.colors.loadingBack : null}
+      participantsPage
     >
       <SEO title="Participants" />
       {finishedLoading ? (

@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
   };
 
   const main = (
-    <Main style={{ transitionDelay: "400ms" }}>
+    <Main>
       <Image fluid={data.placeholderImage.childImageSharp.fluid} />
       <Info>
         <Heading>NU Open</Heading>
@@ -97,9 +97,11 @@ const Wrapper = styled.div`
   @media screen and (max-height: 720px) {
     min-height: 720px;
   }
+
+  ${mixins.smoothAppear(600, 0)};
 `;
 
-const Main = styled.main`
+const Main = styled.div`
   width: 100%;
   max-width: ${sizes.bigDesktop}px;
   margin: 0 auto;
@@ -130,6 +132,8 @@ const Main = styled.main`
     padding: 0 20px;
     margin-top: 50px;
   `};
+
+  ${mixins.smoothAppear(600, 450)};
 
   ${mixins.rowFlex};
 `;

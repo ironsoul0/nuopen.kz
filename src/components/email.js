@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
 
 import theme from "../styles/theme";
 import mixins from "../styles/mixins";
 import media from "../styles/media";
 
-const Email = () => {
+const Email = ({ isParticipants }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -20,10 +21,14 @@ const Email = () => {
   const { email } = data.site.siteMetadata;
 
   return (
-    <EmailWrapper>
+    <EmailWrapper delay={isParticipants ? 600 : 1100}>
       <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
     </EmailWrapper>
   );
+};
+
+Email.propTypes = {
+  isParticipants: PropTypes.bool.isRequired,
 };
 
 export default Email;
@@ -41,6 +46,8 @@ const EmailWrapper = styled.div`
   ${media.desktop`
     display: none;
   `};
+
+  ${props => mixins.smoothAppear(500, props.delay)};
 
   &:after {
     content: "";

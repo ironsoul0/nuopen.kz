@@ -45,4 +45,6 @@ const Container = styled.div`
     overflow-y: scroll;
     visibility: hidden;
   `};
+
+  ${mixins.smoothAppear(600, 800)};
 `;
