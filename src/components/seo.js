@@ -1,17 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
+function SEO() {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
+            siteUrl
             description
-            author
             keywords
           }
         }
@@ -19,52 +18,35 @@ function SEO({ description, lang, meta, title }) {
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const {
+    siteMetadata: { title, description, siteUrl, keywords },
+  } = site;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title ? `${title} | ${site.siteMetadata.title}` : site.siteMetadata.title}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: site.siteMetadata.title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: "keywords",
-          content: site.siteMetadata.keywords.join(", "),
-        },
-      ].concat(meta)}
-    />
+    <Helmet>
+      <html lang="en" prefix="og: http://ogp.me/ns#" />
+      <title itemProp="name" lang="en">
+        {title}
+      </title>
+      {/* <link rel="shortcut icon" href={favicon} /> */}
+      <link rel="canonical" href={siteUrl} />
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={siteUrl} />
+      <meta property="og:site_name" content={title} />
+      <meta property="og:image" content="https://nuopen.kz/ogimage.png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:locale" content="en" />
+      <meta itemProp="name" content={title} />
+      <meta itemProp="description" content={description} />
+      <meta itemProp="image" content="https://nuopen.kz/ogimage.png" />
+    </Helmet>
   );
 }
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-  title: null,
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
-};
 
 export default SEO;

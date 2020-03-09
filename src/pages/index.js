@@ -7,7 +7,6 @@ import scrollTo from "gatsby-plugin-smoothscroll";
 
 import Sponsors from "../components/sponsors";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 import Nav from "../components/nav";
 import FAQ from "../components/faq";
 import mixins from "../styles/mixins";
@@ -48,7 +47,6 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO />
       <Wrapper>
         {items[0]}
         {items[1]}

@@ -6,10 +6,12 @@ import Email from "./email";
 import GlobalStyle from "../styles/GlobalStyle";
 import theme from "../styles/theme";
 import Footer from "./footer";
+import SEO from "./seo";
 
 const Layout = ({ children, showSecondary, backgroundColor, participantsPage }) => {
   return (
     <div style={{ backgroundColor }}>
+      <SEO />
       <Root>
         <GlobalStyle />
         {showSecondary && <Email isParticipants={participantsPage} />}

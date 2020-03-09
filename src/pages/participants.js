@@ -10,7 +10,6 @@ import ParticipantRow from "../components/participantRow";
 import Nav from "../components/nav";
 import { ResponsiveContainer, Heading, Subheading } from "../components/responsive";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 import mixins from "../styles/mixins";
 import media from "../styles/media";
 import theme from "../styles/theme";
@@ -63,7 +62,6 @@ const SecondPage = ({ data }) => {
       backgroundColor={!finishedLoading ? theme.colors.loadingBack : null}
       participantsPage
     >
-      <SEO title="Participants" />
       {finishedLoading ? (
         <Config>
           <Nav to="/" destination="Main" />
