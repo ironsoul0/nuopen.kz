@@ -46,5 +46,5 @@ const Container = styled.div`
     visibility: hidden;
   `};
 
-  ${mixins.smoothAppear(600, 800)};
+  ${mixins.smoothAppear(600, 1000)};
 `;

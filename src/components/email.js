@@ -21,7 +21,7 @@ const Email = ({ isParticipants }) => {
   const { email } = data.site.siteMetadata;
 
   return (
-    <EmailWrapper delay={isParticipants ? 600 : 1100}>
+    <EmailWrapper delay={isParticipants ? 600 : 1400}>
       <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
     </EmailWrapper>
   );
@@ -47,7 +47,7 @@ const EmailWrapper = styled.div`
     display: none;
   `};
 
-  ${props => mixins.smoothAppear(500, props.delay)};
+  ${props => mixins.smoothAppear(600, props.delay)};
 
   &:after {
     content: "";

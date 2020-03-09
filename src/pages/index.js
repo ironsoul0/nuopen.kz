@@ -98,7 +98,7 @@ const Wrapper = styled.div`
     min-height: 720px;
   }
 
-  ${mixins.smoothAppear(600, 0)};
+  ${mixins.smoothAppear(600, 200)};
 `;
 
 const Main = styled.div`
@@ -133,7 +133,7 @@ const Main = styled.div`
     margin-top: 50px;
   `};
 
-  ${mixins.smoothAppear(600, 450)};
+  ${mixins.smoothAppear(600, 650)};
 
   ${mixins.rowFlex};
 `;
