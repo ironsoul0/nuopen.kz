@@ -20,7 +20,7 @@ const FIRST_ROW = ["Team Name", "Surnames", "Organization", "Type", "Check"];
 
 const SecondPage = ({ data }) => {
   const getSheetValues = async () => {
-    const request = await fetch(`${process.env.GATSBY_API_URL}/participants`);
+    const request = await fetch(`https://api.nuopen.kz/participants`);
     const sheetData = await request.json();
 
     return sheetData;
