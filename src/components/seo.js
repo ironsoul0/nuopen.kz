@@ -28,7 +28,6 @@ function SEO() {
       <title itemProp="name" lang="en">
         {title}
       </title>
-      {/* <link rel="shortcut icon" href={favicon} /> */}
       <link rel="canonical" href={siteUrl} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
@@ -38,8 +37,8 @@ function SEO() {
       <meta property="og:url" content={siteUrl} />
       <meta property="og:site_name" content={title} />
       <meta property="og:image" content="https://nuopen.kz/ogimage.png" />
-      <meta property="og:image:width" content="256" />
-      <meta property="og:image:height" content="256" />
+      <meta property="og:image:width" content="512" />
+      <meta property="og:image:height" content="512" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:locale" content="en" />
       <meta itemProp="name" content={title} />
