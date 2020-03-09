@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="./src/images/badge.png" width="300" />
+  <img alt="Logo" src="./src/images/badge.png" width="600" />
 </div>
 <h1 align="center">
   nuopen.kz
@@ -34,14 +34,6 @@
    ```sh
    npm start
    ```
-
-## 🎨 Color Palette
-
-| Color          | Hex                                                                |
-| -------------- | ------------------------------------------------------------------ |
-| Dark Blue      | ![#333644](https://via.placeholder.com/10/333644?text=+) `#333644` |
-| Blood Red      | ![#e86d70](https://via.placeholder.com/10/e86d70?text=+) `#e86d70` |
-| Dark Grey      | ![#d7d7da](https://via.placeholder.com/10/d7d7da?text=+) `#d7d7da` |
 
 ## Contributing
 
