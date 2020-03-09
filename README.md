@@ -36,12 +36,12 @@
    npm start
    ```
 
-## Contributing
+## 🚁 Contributing
 
 Feel free to contribute and suggest any improvements.
 
 This repository is a full source of the website created using Gatsby, React and styled-components.
 
-## Acknowledgements
+## 🙏🏻 Acknowledgements
 
 - Thanks to [bchiang7](https://github.com/bchiang7) and her awesome open-source project  [v4](https://github.com/bchiang7/v4). I have learned a lot of things by looking at this source code and have borrowed a few things to this project.

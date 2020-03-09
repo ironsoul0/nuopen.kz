@@ -10,12 +10,12 @@ import { BTS, KazDream, Okoo, ACM } from "../icons";
 const Sponsors = () => {
   return (
     <Container>
-      <Sponsor link="https://btsdigital.kz/">
+      {/* <Sponsor link="https://btsdigital.kz/">
         <BTS />
       </Sponsor>
       <Sponsor link="https://kazdream.kz/">
         <KazDream />
-      </Sponsor>
+      </Sponsor> */}
       <Sponsor link="https://okoo.kz/" style={{ marginBottom: "12px" }}>
         <Okoo />
       </Sponsor>
@@ -33,7 +33,7 @@ const Container = styled.div`
   margin-bottom: 10px;
   justify-content: space-between;
   width: 100%;
-  max-width: ${sizes.tablet}px;
+  max-width: ${sizes.tiny}px;
 
   ${mixins.rowFlex};
 
