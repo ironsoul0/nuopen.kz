@@ -5,7 +5,7 @@ import Sponsor from "./sponsor";
 import mixins from "../styles/mixins";
 import media, { sizes } from "../styles/media";
 
-import { BTS, KazDream, Okoo, ACM } from "../icons";
+import { BTS, KazDream, Okoo, ACM, Epam } from "../icons";
 
 const Sponsors = () => {
   return (
@@ -16,10 +16,13 @@ const Sponsors = () => {
       <Sponsor link="https://kazdream.kz/">
         <KazDream />
       </Sponsor> */}
+      <Sponsor link="https://epam.com/" style={{ marginBottom: "0px" }}>
+        <Epam />
+      </Sponsor>
       <Sponsor link="https://okoo.kz/" style={{ marginBottom: "12px" }}>
         <Okoo />
       </Sponsor>
-      <Sponsor style={{ marginBottom: "3px" }} link="https://acmkz.github.io/">
+      <Sponsor style={{ marginBottom: "0px" }} link="https://acmkz.github.io/">
         <ACM />
       </Sponsor>
     </Container>
@@ -33,7 +36,7 @@ const Container = styled.div`
   margin-bottom: 10px;
   justify-content: space-between;
   width: 100%;
-  max-width: ${sizes.tiny}px;
+  max-width: ${sizes.thone}px;
 
   ${mixins.rowFlex};
 
