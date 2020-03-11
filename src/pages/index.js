@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => {
       <Image fluid={data.placeholderImage.childImageSharp.fluid} />
       <Info>
         <Heading>NU Open</Heading>
-        <Heading lowOpacity>Spring 2020.</Heading>
+        <Heading lowOpacity>Spring 2020</Heading>
         <Description>First ever open ICPC-style competition</Description>
         <Description style={{ marginBottom: "20px" }}>
           held in the walls of Nazarbayev University.
