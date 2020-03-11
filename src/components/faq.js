@@ -42,7 +42,8 @@ const FAQElements = [
   },
   {
     question: "Who are eligible to participate?",
-    answer: "Since it is an open competition, everyone is welcome!",
+    answer:
+      "Since it is an open competition, everyone is welcome! However, due to the recent outbreak of coronavirus, only NU students are allowed to participate onsite. If you are not a NU student, you can still participate remotely from home.",
   },
   {
     question: "What kind of problems will we solve?",
