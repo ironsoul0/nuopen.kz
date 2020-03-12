@@ -45,8 +45,9 @@ const Container = styled.div`
   `};
 
   ${media.thone`
-    overflow-y: scroll;
+    // overflow-y: scroll;
     visibility: hidden;
+    // padding: 0 30px;
   `};
 
   ${mixins.smoothAppear(600, 1000)};

@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
+import { useWindowWidth } from "@react-hook/window-size";
 
 import Time from "./time";
 import { ResponsiveContainer, Heading, Subheading } from "./responsive";
@@ -62,11 +63,13 @@ const FAQElements = [
 ];
 
 const FAQ = () => {
+  const width = useWindowWidth();
+
   const revealContainer = useRef(null);
   useEffect(() => sr.reveal(revealContainer.current, theme.srConfig()), []);
 
   return (
-    <ResponsiveContainer id="faq" ref={revealContainer}>
+    <ResponsiveContainer id="faq" ref={width > 600 ? revealContainer : null}>
       <Heading>Schedule</Heading>
       <Subheading style={{ marginBottom: "60px" }}>11 April - NU Library</Subheading>
       <InfoBlock>
