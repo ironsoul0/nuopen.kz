@@ -43,21 +43,21 @@ const FAQElements = [
   {
     question: "Who are eligible to participate?",
     answer:
-      "Since it is an open competition, everyone is welcome! However, due to the recent outbreak of coronavirus, only NU students are allowed to participate onsite. If you are not a NU student, you can still participate remotely from home.",
+      "Since it is an open competition, everyone is welcome! However, due to the recent outbreak of coronavirus, only NU students are allowed to participate onsite. If you are not an NU student, you can still participate remotely online.",
   },
   {
     question: "What kind of problems will we solve?",
     answer:
-      "Have a look at <a href='https://codeforces.com/problemset/problem/4/A'>this</a> and <a href='https://acmp.ru/index.asp?main=task&id_task=1'>this</a>. These are some problems to get you familiar with a format.",
+      "Have a look at <a href='https://codeforces.com/problemset/problem/4/A'>this</a> and <a href='https://acmp.ru/index.asp?main=task&id_task=1'>this</a>. These are some problems to get you familiar with the format.",
   },
   {
     question: "Who have prepared the problems?",
     answer:
-      "The true feature of the NU Open is that all problems are prepared by current NU students and our legendary NU alumni.",
+      "The true feature of NU Open is that all the problems are prepared by current NU students and our legendary NU alumni.",
   },
   {
     question: "What are the prizes?",
-    answer: "Come onsite and you will know, we have prepared very interesting presents :)",
+    answer: "Come onsite and you will find out, we have prepared very interesting presents :)",
   },
 ];
 

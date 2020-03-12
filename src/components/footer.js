@@ -7,7 +7,7 @@ import mixins from "../styles/mixins";
 const Footer = () => (
   <Container>
     <Wrap href="https://kutt.it/hNPaLR" target="_blank" rel="noopener noreferrer">
-      <p>Designed & Crafted in NU © 2020</p>
+      <p>Designed & Crafted at NU © 2020</p>
     </Wrap>
   </Container>
 );

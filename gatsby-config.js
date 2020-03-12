@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `NU Open - Spring 2020`,
     siteUrl: "https://nuopen.kz",
-    description: `First ever open ICPC-style competition held in the walls of Nazarbayev University.`,
+    description: `First-ever open ICPC-style competition held in the walls of Nazarbayev University.`,
     keywords: "icpc, nu, nazarbayev university, nu open, acm icpc, nuopen",
     email: `organizers@nuopen.kz`,
     formLink: "https://nuopen.typeform.com/to/XMifQa",
