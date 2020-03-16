@@ -58,7 +58,7 @@ const FAQElements = [
   },
   {
     question: "What are the prizes?",
-    answer: "Come onsite and you will find out, we have prepared very interesting presents :)",
+    answer: "Come onsite and you will find out, we have prepared very interesting presents.",
   },
 ];
 
