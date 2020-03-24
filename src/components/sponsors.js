@@ -22,7 +22,7 @@ const Sponsors = () => {
       <Sponsor link="https://okoo.kz/" style={{ marginBottom: "12px" }}>
         <Okoo />
       </Sponsor>
-      <Sponsor style={{ marginBottom: "0px" }} link="https://acmkz.github.io/">
+      <Sponsor style={{ marginBottom: "2px" }} link="https://acmkz.github.io/">
         <ACM />
       </Sponsor>
     </Container>
