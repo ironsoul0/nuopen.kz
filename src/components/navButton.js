@@ -22,11 +22,10 @@ const MyLink = styled(Link)`
   color: ${theme.colors.black};
   background-color: ${theme.colors.white};
   font-size: ${theme.fontSizes.xs};
-  padding: 17px 0px;
+  padding: 15px 0px;
   width: 135px;
   text-align: center;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 5px;
   font-weight: 300;
 
   &:hover {

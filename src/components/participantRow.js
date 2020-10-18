@@ -7,12 +7,12 @@ import media, { sizes } from "../styles/media";
 import mixins from "../styles/mixins";
 
 const Row = ({ elements, width, main }) => {
-  let flexes = [3, 4, 4, 2, 2];
+  let flexes = [3, 4, 4, 3];
   let minWidth = sizes.bigDesktop;
 
   const breakpoints = {
-    [sizes.thone]: [3, 4, 0, 0, 3],
-    [sizes.tablet]: [3, 4, 4, 0, 2],
+    [sizes.thone]: [3, 4, 0, 3],
+    [sizes.tablet]: [3, 4, 4, 2],
   };
 
   Object.entries(breakpoints).forEach(([key, value]) => {
@@ -21,6 +21,8 @@ const Row = ({ elements, width, main }) => {
       flexes = value;
     }
   });
+
+  console.log(flexes);
 
   const content = elements.map((element, index) => {
     return flexes[index] > 0 ? (
@@ -63,7 +65,7 @@ const RowContainer = styled.div`
     margin: 0;
 
     &:nth-last-of-type(1) {
-      max-width: 80px;
+      max-width: 100px;
     }
   }
 `;

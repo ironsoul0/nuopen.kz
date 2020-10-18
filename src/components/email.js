@@ -21,7 +21,7 @@ const Email = ({ isParticipants }) => {
   const { email } = data.site.siteMetadata;
 
   return (
-    <EmailWrapper delay={isParticipants ? 600 : 1400}>
+    <EmailWrapper delay={isParticipants ? 600 : 800}>
       <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
     </EmailWrapper>
   );

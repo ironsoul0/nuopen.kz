@@ -10,28 +10,16 @@ import sr from "../utils/sr";
 
 const schedule = [
   {
-    time: "10:00 - 11:00",
-    name: "Registration",
+    time: "9:00 - 10:00",
+    name: "Sending accounts",
   },
   {
-    time: "11:00 - 11:30",
-    name: "Opening Ceremony",
+    time: "10:00 - 15:00",
+    name: "Epic battle",
   },
   {
-    time: "11:30 - 12:00",
-    name: "Team Placement",
-  },
-  {
-    time: "12:00 - 17:00",
-    name: "Flexing",
-  },
-  {
-    time: "17:00 - 18:00",
-    name: "Dinner",
-  },
-  {
-    time: "18:00 - 18:30",
-    name: "Closing Ceremony",
+    time: "15:00 - 16:00",
+    name: "Leaderboard unfreeze",
   },
 ];
 
@@ -43,8 +31,11 @@ const FAQElements = [
   },
   {
     question: "Who are eligible to participate?",
-    answer:
-      "Since it is an open competition, everyone is welcome! However, due to the recent outbreak of coronavirus, only NU students are allowed to participate onsite. If you are not an NU student, you can still participate remotely online.",
+    answer: "The entire competition will be held online and everyone is welcome to participate!",
+  },
+  {
+    question: "How many people should be in a team?",
+    answer: "Teams should be formed out of maximum 3 people.",
   },
   {
     question: "What kind of problems will we solve?",
@@ -58,7 +49,8 @@ const FAQElements = [
   },
   {
     question: "What are the prizes?",
-    answer: "Come onsite and you will find out, we have prepared very interesting presents.",
+    answer:
+      "We've teamed up with out main sponsor EPAM to prepare very interesting presents for you!",
   },
 ];
 
@@ -71,7 +63,7 @@ const FAQ = () => {
   return (
     <ResponsiveContainer id="faq" ref={width > 600 ? revealContainer : null}>
       <Heading>Schedule</Heading>
-      <Subheading style={{ marginBottom: "60px" }}>Date and place - TBA</Subheading>
+      <Subheading style={{ marginBottom: "60px" }}>14 November, Remote</Subheading>
       {/* <Subheading style={{ marginBottom: "60px" }}>11 April - NU Library</Subheading> */}
       <InfoBlock>
         <TimeWrap>

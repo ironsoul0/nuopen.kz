@@ -9,6 +9,7 @@ import Sponsors from "../components/sponsors";
 import Layout from "../components/layout";
 import Nav from "../components/nav";
 import FAQ from "../components/faq";
+import Main from "../components/main";
 import mixins from "../styles/mixins";
 import theme from "../styles/theme";
 import media, { sizes } from "../styles/media";
@@ -16,42 +17,14 @@ import media, { sizes } from "../styles/media";
 const IndexPage = ({ data }) => {
   const nav = <Nav to="/participants" destination="Participants" />;
 
-  const openForm = () => {
-    window.open(data.config.siteMetadata.formLink, "_blank");
-  };
-
-  const main = (
-    <Main>
-      <Image fluid={data.placeholderImage.childImageSharp.fluid} />
-      <Info>
-        <Heading>NU Open</Heading>
-        <Heading lowOpacity>Spring 2020</Heading>
-        <Description>First-ever open ICPC-style competition</Description>
-        <Description style={{ marginBottom: "20px" }}>
-          held in the walls of Nazarbayev University.
-        </Description>
-        {/* <Description>11 April - Nur-Sultan, Kazakhstan.</Description> */}
-        <Description>Postponed to Fall 2020 due to Coronavirus.</Description>
-        <ButtonsRow>
-          <Button onClick={openForm}>Register</Button>
-          <Button onClick={() => scrollTo("#faq")} href="#">
-            Sked & FAQ
-          </Button>
-        </ButtonsRow>
-      </Info>
-    </Main>
-  );
-
-  const sponsors = <Sponsors data={data} />;
-
-  const items = [nav, main, sponsors];
+  const items = [nav, <Main formLink={data.config.siteMetadata.formLink} />];
 
   return (
     <Layout>
       <Wrapper>
         {items[0]}
         {items[1]}
-        {items[2]}
+        <div />
       </Wrapper>
       <FAQ />
     </Layout>
@@ -66,13 +39,6 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "hacker.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 2200) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     config: site {
       siteMetadata {
         formLink
@@ -96,46 +62,44 @@ const Wrapper = styled.div`
   @media screen and (max-height: 720px) {
     min-height: 720px;
   }
-
-  ${mixins.smoothAppear(600, 200)};
 `;
 
-const Main = styled.div`
-  width: 100%;
-  max-width: ${sizes.bigDesktop}px;
-  margin: 0 auto;
-  justify-content: space-between;
-  padding: 0px 30px;
-  font-size: 25px;
+// const Main = styled.div`
+//   width: 100%;
+//   max-width: ${sizes.bigDesktop}px;
+//   margin: 0 auto;
+//   justify-content: space-between;
+//   padding: 0px 30px;
+//   font-size: 25px;
 
-  ${media.bigDesktop`
-    padding: 0px 50px;
-    font-size: 23px;
-    max-width: ${sizes.desktop}px;
-  `};
+//   ${media.bigDesktop`
+//     padding: 0px 50px;
+//     font-size: 23px;
+//     max-width: ${sizes.desktop}px;
+//   `};
 
-  ${media.desktop`
-    font-size: 25px;
-  `};
+//   ${media.desktop`
+//     font-size: 25px;
+//   `};
 
-  ${media.tablet`
-    font-size: 22px;
-    padding: 0 40px;
-  `};
+//   ${media.tablet`
+//     font-size: 22px;
+//     padding: 0 40px;
+//   `};
 
-  ${media.phablet`
-    padding: 0 30px;
-  `};
+//   ${media.phablet`
+//     padding: 0 30px;
+//   `};
 
-  ${media.phone`
-    padding: 0 20px;
-    margin-top: 50px;
-  `};
+//   ${media.phone`
+//     padding: 0 20px;
+//     margin-top: 50px;
+//   `};
 
-  ${mixins.smoothAppear(600, 650)};
+//   ${mixins.smoothAppear(600, 650)};
 
-  ${mixins.rowFlex};
-`;
+//   ${mixins.rowFlex};
+// `;
 
 const Image = styled(Img)`
   width: 600px;

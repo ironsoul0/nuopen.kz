@@ -15,7 +15,7 @@ import media from "../styles/media";
 import theme from "../styles/theme";
 import cache from "../utils/cache";
 
-const FIRST_ROW = ["Team Name", "Surnames", "Organization", "Type", "Check"];
+const FIRST_ROW = ["Team Name", "Surnames", "Organization", "Confirm"];
 
 const SecondPage = ({ data }) => {
   const getSheetValues = async () => {
@@ -68,7 +68,7 @@ const SecondPage = ({ data }) => {
           <Container>
             <div>
               <Heading>Participants</Heading>
-              <Subheading>Teams ready to flex.</Subheading>
+              <Subheading>Teams ready to flex</Subheading>
             </div>
             {participants.length > 0 ? (
               <>
@@ -133,13 +133,16 @@ const Config = styled.div`
 `;
 
 const Container = styled(ResponsiveContainer)`
-  padding-left: 70px;
   padding-top: 80px;
   padding-bottom: 60px;
 
   ${media.thone`
     padding-top: 80px;
   `};
+
+  @media screen and (min-width: 1000px) {
+    padding-left: 70px;
+  }
 `;
 
 const Table = styled.div`
