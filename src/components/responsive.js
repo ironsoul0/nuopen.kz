@@ -39,6 +39,10 @@ export const ResponsiveContainer = styled.div`
 export const Heading = styled.h1`
   font-size: 2.7em;
   margin: 0;
+
+  ${media.phablet`
+    font-size: 33px;
+  `};
 `;
 
 export const Subheading = styled.h1`
@@ -46,4 +50,8 @@ export const Subheading = styled.h1`
   margin: 0;
   padding-top: 10px;
   opacity: 0.5;
+
+  ${media.phablet`
+    font-size: 25px;
+  `};
 `;
