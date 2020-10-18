@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `NU Open - Spring 2020`,
+    title: `NU Open - Fall 2020`,
     siteUrl: "https://nuopen.kz",
     description: `First-ever open ICPC-style competition held in the walls of Nazarbayev University.`,
     keywords: "icpc, nu, nazarbayev university, nu open, acm icpc, nuopen",
@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `NU Open - Spring 2020`,
+        name: `NU Open - Fall 2020`,
         short_name: `nuopen`,
         start_url: `/`,
         background_color: `#333644`,
