@@ -11,15 +11,16 @@ import ACM from "../icons/acm.png";
 import Hafa from "../icons/hafa.jpg";
 import Dulat from "../icons/dulat.jpg";
 import Krauch from "../icons/krauch.png";
+import Timka from "../icons/timka.jpg";
 
-const images = [Hafa, Dulat, Krauch];
+const images = [Hafa, Dulat, Krauch, Timka];
 
 const Sponsors = () => {
   const [opacity, setOpacity] = useState(0);
   const [imageIndex, setImageindex] = useState(0);
 
   const revealImg = () => {
-    setImageindex(Math.floor(Math.random() * 3));
+    setImageindex(Math.floor(Math.random() * images.length));
     setOpacity(1);
     const timeout = setTimeout(() => {
       setOpacity(0);
@@ -61,7 +62,7 @@ const ACMImg = styled.img`
 
 const Img = styled.img`
   height: 100px;
-  margin-left: 350px;
+  margin-left: 450px;
 
   margin-top: 15px;
   opacity: ${props => props.opacity};
