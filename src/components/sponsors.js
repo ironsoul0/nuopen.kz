@@ -50,6 +50,7 @@ const Container = styled.div`
   ${mixins.rowFlex};
 
   ${media.thone`
+    margin-bottom: -60px;
   `};
 `;
 
