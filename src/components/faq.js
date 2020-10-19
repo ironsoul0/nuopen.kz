@@ -7,6 +7,7 @@ import { ResponsiveContainer, Heading, Subheading } from "./responsive";
 import { sizes } from "../styles/media";
 import theme from "../styles/theme";
 import sr from "../utils/sr";
+import Sponsors from "../components/sponsors";
 
 const schedule = [
   {
@@ -50,7 +51,7 @@ const FAQElements = [
   {
     question: "What are the prizes?",
     answer:
-      "We've teamed up with out main sponsor EPAM to prepare very interesting presents for you!",
+      "We've teamed up with our main sponsor EPAM to prepare very interesting presents for you!",
   },
 ];
 
@@ -73,7 +74,7 @@ const FAQ = () => {
         </TimeWrap>
       </InfoBlock>
       <Heading style={{ marginTop: "-30px" }}>FAQ</Heading>
-      <Subheading>Frequently Asked Questions</Subheading>
+      <Subheading style={{ marginBottom: "-20px" }}>Frequently Asked Questions</Subheading>
       <InfoBlock>
         {FAQElements.map((element, index) => (
           <QABlock key={index}>
@@ -83,6 +84,11 @@ const FAQ = () => {
             <p dangerouslySetInnerHTML={{ __html: element.answer }} />
           </QABlock>
         ))}
+      </InfoBlock>
+      <Heading style={{ marginTop: "80px" }}>Sponsors</Heading>
+      <Subheading>Love 3000 times</Subheading>
+      <InfoBlock>
+        <Sponsors />
       </InfoBlock>
     </ResponsiveContainer>
   );
