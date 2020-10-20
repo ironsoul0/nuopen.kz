@@ -15,7 +15,7 @@ const Main = ({ formLink }) => {
         <Description>
           First-ever ICPC-style programming contest organized by Nazarbayev University
         </Description>
-        <Description>Join us on November 14, 2020 to compete for exciting prizes</Description>
+        <Description>Join us on November 21, 2020 to compete for exciting prizes</Description>
       </div>
       <Button target="_blank" href="noopener noreferrer" href={formLink}>
         Register now
