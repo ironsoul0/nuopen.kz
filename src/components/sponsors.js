@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Chance from "chance";
 
 import Sponsor from "./sponsor";
 import mixins from "../styles/mixins";
@@ -14,13 +15,14 @@ import Krauch from "../icons/krauch.png";
 import Timka from "../icons/timka.jpg";
 
 const images = [Hafa, Dulat, Krauch, Timka];
+const chance = new Chance();
 
 const Sponsors = () => {
   const [opacity, setOpacity] = useState(0);
   const [imageIndex, setImageindex] = useState(0);
 
   const revealImg = () => {
-    setImageindex(Math.floor(Math.random() * images.length));
+    setImageindex(chance.integer({ min: 0, max: images.length - 1 }));
     setOpacity(1);
     const timeout = setTimeout(() => {
       setOpacity(0);

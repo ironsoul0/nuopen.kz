@@ -7,6 +7,7 @@
   "dependencies": {
     "@react-hook/window-size": "^1.0.13",
     "babel-plugin-styled-components": "^1.11.1",
+    "chance": "^1.1.7",
     "gatsby": "^2.24.80",
     "gatsby-image": "^2.4.21",
     "gatsby-plugin-google-analytics": "^2.3.19",
