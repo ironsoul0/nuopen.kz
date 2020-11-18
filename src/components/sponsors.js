@@ -35,7 +35,7 @@ const Sponsors = () => {
       <Sponsor link="https://epam.com/" style={{ marginRight: "40px" }}>
         <Epam />
       </Sponsor>
-      <Sponsor style={{ marginTop: "15px" }} link="https://acmkz.github.io/">
+      <Sponsor style={{ marginTop: "15px" }} link="https://nu-acmsc.github.io/">
         <ACMImg src={ACM} />
       </Sponsor>
       <Img onMouseOut={revealImg} opacity={opacity} src={images[imageIndex]}></Img>
