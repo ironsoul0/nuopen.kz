@@ -11,15 +11,15 @@ import Sponsors from "../components/sponsors";
 
 const schedule = [
   {
-    time: "9:00 - 10:00",
+    time: "9:00 - 11:00",
     name: "Sending accounts",
   },
   {
-    time: "10:00 - 15:00",
+    time: "11:00 - 16:00",
     name: "Epic battle",
   },
   {
-    time: "15:00 - 16:00",
+    time: "16:00 - 17:00",
     name: "Leaderboard unfreeze",
   },
 ];
