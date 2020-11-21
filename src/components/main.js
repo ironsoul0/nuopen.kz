@@ -18,7 +18,7 @@ const Main = ({ formLink }) => {
         <Description>Join us on November 21, 2020 to compete for exciting prizes</Description>
       </div>
       <Button target="_blank" href="noopener noreferrer" href={formLink}>
-        Register now
+        Live Standings
       </Button>
     </Body>
   );

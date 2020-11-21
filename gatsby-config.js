@@ -5,7 +5,7 @@ module.exports = {
     description: `First-ever open ICPC-style programming contest organized by Nazarbayev University.`,
     keywords: "icpc, nu, nazarbayev university, nu open, acm icpc, nuopen",
     email: `organizers@nuopen.kz`,
-    formLink: "https://nuopen.typeform.com/to/XMifQa",
+    formLink: "https://codeforces.com/spectator/ranklist/6c0310c3e803c0bf93454870e9e6ff05",
     author: `@ironsoul`,
   },
   plugins: [
