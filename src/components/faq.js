@@ -41,7 +41,7 @@ const FAQElements = [
   {
     question: "What kind of problems will we solve?",
     answer:
-      "Have a look at <a href='https://codeforces.com/problemset/problem/4/A'>this</a> and <a href='https://acmp.ru/index.asp?main=task&id_task=1'>this</a>. These are some problems to get you familiar with the format.",
+      "Have a look at <a href='https://codeforces.com/problemset/problem/1578/J'>this</a>. This is a problem to get you familiar with the format.",
   },
   {
     question: "Who have prepared the problems?",
