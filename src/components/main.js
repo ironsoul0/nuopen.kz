@@ -15,10 +15,10 @@ const Main = ({ formLink }) => {
         <Description>
           First-ever ICPC-style programming contest organized by Nazarbayev University
         </Description>
-        <Description>Join us on November 21, 2020 to compete for exciting prizes</Description>
+        <Description>Join us on November 13, 2021 to compete for exciting prizes</Description>
       </div>
       <Button target="_blank" href="noopener noreferrer" href={formLink}>
-        Live Standings
+        Register
       </Button>
     </Body>
   );
@@ -105,7 +105,7 @@ const Button = styled.a`
   padding: 20px 0px;
   width: 195px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 30px;
   margin-top: 40px;
 
   ${media.phablet`

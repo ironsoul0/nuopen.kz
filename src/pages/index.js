@@ -14,6 +14,8 @@ import mixins from "../styles/mixins";
 import theme from "../styles/theme";
 import media, { sizes } from "../styles/media";
 
+import Grid from "../images/grid.png"
+
 const IndexPage = ({ data }) => {
   const nav = <Nav to="/participants" destination="Participants" />;
 
@@ -22,6 +24,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Wrapper>
+        <Float left={100} right={0} top={100} src={Grid}/>
+        <Float left={0} right={100} top={600} src={Grid}/>
         {items[0]}
         {items[1]}
         <div />
@@ -62,6 +66,15 @@ const Wrapper = styled.div`
   @media screen and (max-height: 720px) {
     min-height: 720px;
   }
+`;
+
+const Float = styled.img`
+  position: absolute;
+  width: 15vw;
+  top: ${props => props.top}px;
+  left: ${props => props.left};
+  right: ${props => props.right};
+  ${mixins.floating(3000, 200)}
 `;
 
 // const Main = styled.div`

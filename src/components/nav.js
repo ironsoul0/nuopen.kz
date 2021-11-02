@@ -83,7 +83,7 @@ const Contact = styled.a`
 `;
 
 const LogoLink = styled(Link)`
-  margin-top: 15px;
+  margin-top: 8px;
 `;
 
 const MyLogo = styled(Logo)`

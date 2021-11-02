@@ -48,6 +48,15 @@ const mixins = {
     animation-delay: ${delay}ms;
     animation-fill-mode: forwards;
   `,
+  float: keyframes`
+    0% { transform: translateY(0px); }
+    50%  { transform: translateY(10px); }
+    100%   { transform: translateY(0px); } 
+  `,
+  floating: (duration = 2000, delay = 0) => css`
+    animation: ${mixins.float} ${duration}ms ease-in-out infinite;
+    animation-delay: ${delay}ms;
+  `,
 };
 
 export default mixins;

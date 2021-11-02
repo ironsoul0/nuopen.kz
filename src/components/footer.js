@@ -7,7 +7,7 @@ import mixins from "../styles/mixins";
 const Footer = () => (
   <Container>
     <Wrap href="https://github.com/ironsoul0/nuopen.kz" target="_blank" rel="noopener noreferrer">
-      <p>Designed & Crafted at NU © 2020</p>
+      <p>Designed & Crafted at NU © 2021</p>
     </Wrap>
   </Container>
 );

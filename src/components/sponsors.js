@@ -9,6 +9,7 @@ import media from "../styles/media";
 import { Epam } from "../icons";
 
 import ACM from "../icons/acm.png";
+import Kolesa from "../icons/kolesa.png";
 import Hafa from "../icons/hafa.jpg";
 import Dulat from "../icons/dulat.jpg";
 import Krauch from "../icons/krauch.png";
@@ -35,7 +36,10 @@ const Sponsors = () => {
       <Sponsor link="https://epam.com/" style={{ marginRight: "40px" }}>
         <Epam />
       </Sponsor>
-      <Sponsor style={{ marginTop: "15px" }} link="https://nu-acmsc.github.io/">
+      <Sponsor style={{ marginTop: "18px", marginRight: "30px" }} link="https://job.kolesa.kz/">
+        <ACMImg src={Kolesa} />
+      </Sponsor>
+      <Sponsor style={{ marginTop: "18px" }} link="https://nu-acmsc.github.io/">
         <ACMImg src={ACM} />
       </Sponsor>
       <Img onMouseOut={revealImg} opacity={opacity} src={images[imageIndex]}></Img>
