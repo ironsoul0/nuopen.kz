@@ -15,7 +15,7 @@ import media from "../styles/media";
 import theme from "../styles/theme";
 import cache from "../utils/cache";
 
-const FIRST_ROW = ["Team Name", "Surnames", "Organization", "Confirm"];
+const FIRST_ROW = ["Team Name", "Surnames", "Organization"];
 
 const SecondPage = ({ data }) => {
   const getSheetValues = async () => {
