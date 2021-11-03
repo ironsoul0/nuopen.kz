@@ -14,7 +14,7 @@ const Nav = ({ to, destination }) => {
     query {
       site {
         siteMetadata {
-          email
+          tgUrl
         }
       }
     }
@@ -26,7 +26,7 @@ const Nav = ({ to, destination }) => {
         <MyLogo />
       </LogoLink>
       <Bar>
-        <Contact href={`mailto:${data.site.siteMetadata.email}`}>Sponsor Us</Contact>
+        <Contact href={data.site.siteMetadata.tgUrl}>Info Channel</Contact>
         <NavButton to={to}>{destination}</NavButton>
       </Bar>
     </Container>

@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `NU Open - Fall 2021`,
     siteUrl: "https://nuopen.kz",
+    tgUrl: "https://t.me/nuopen",
     description: `First-ever open ICPC-style programming contest organized by Nazarbayev University.`,
     keywords: "icpc, nu, nazarbayev university, nu open, acm icpc, nuopen",
     email: `organizers@nuopen.kz`,
