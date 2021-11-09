@@ -51,7 +51,7 @@ const FAQElements = [
   {
     question: "What are the prizes?",
     answer:
-      "We've teamed up with our main sponsor EPAM to prepare very interesting presents for you!",
+      "We've teamed up with our sponsors EPAM and Kolesa Group to prepare very interesting presents for you!",
   },
 ];
 
